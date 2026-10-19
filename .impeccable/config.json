@@ -20,6 +20,36 @@
         "value": "sizes: 14px, 17px, 20px (ratio 1.4:1)",
         "createdAt": "2026-10-19T19:56:44.569Z",
         "reason": "Claude: body/helper/lead steps sit under 40-90px display headings; going to 1.25 steps would force 13px helper text on phones"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": ".8125rem",
+        "createdAt": "2026-10-19T20:07:40.208Z",
+        "reason": "Claude: single-use value in the shipped build, deliberately left out of DESIGN.md by the documenter (brand name size under 380px)"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#8a6a1f",
+        "createdAt": "2026-10-19T20:07:40.280Z",
+        "reason": "Claude: single-use value in the shipped build, deliberately left out of DESIGN.md by the documenter (header phone icon gold-brown)"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#dfe5ea",
+        "createdAt": "2026-10-19T20:07:40.350Z",
+        "reason": "Claude: single-use value in the shipped build, deliberately left out of DESIGN.md by the documenter (neutral service-arrow circle)"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#8e9cab",
+        "createdAt": "2026-10-19T20:07:40.425Z",
+        "reason": "Claude: single-use value in the shipped build, deliberately left out of DESIGN.md by the documenter (placeholder text on slate, 4.5:1)"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "#ffb4a8",
+        "createdAt": "2026-10-19T20:07:40.495Z",
+        "reason": "Claude: single-use value in the shipped build, deliberately left out of DESIGN.md by the documenter (form error text on slate)"
       }
     ]
   }
