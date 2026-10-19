@@ -87,11 +87,11 @@ p{margin:0}
 .scene canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 @media (orientation:landscape) and (max-height:500px){.scene{height:min(300px,60svh)}}
 .scene-fallback{position:absolute;inset:0;background:linear-gradient(var(--siding),var(--siding-2))}
-.scene-hint{position:absolute;left:16px;top:10px;font-size:.875rem;font-weight:700;color:var(--ink-2);pointer-events:none;transition:opacity .6s}
+.scene-hint{position:absolute;left:16px;top:10px;font-size:.875rem;font-weight:700;color:var(--ink-2);text-shadow:0 0 6px var(--siding),0 0 12px var(--siding),0 0 18px var(--siding);pointer-events:none;transition:opacity .6s}
 .scene-hint.gone{opacity:0}
 
 /* ---------- railing divider ---------- */
-.rail-div{display:block;width:100%;height:56px;overflow:visible;padding-top:14px;box-sizing:content-box}
+.rail-div{display:block;width:100%;height:72px;margin-bottom:-1px;overflow:visible;padding-top:14px;box-sizing:content-box}
 .rail-div .bare{fill:#a3abb2}
 .rail-div .coat rect{fill:var(--coat);opacity:0;transition:opacity .45s ease-out}
 .rail-div.on .coat rect{opacity:1}
@@ -153,10 +153,11 @@ input[type=text]:hover,textarea:hover,input[type=text]:focus,textarea:focus{bord
 input::placeholder,textarea::placeholder{color:#8e9cab}
 .err{color:#ffb4a8;font-weight:700;font-size:1.0625rem;margin-top:8px}
 .err:empty{display:none}
-.send{background:var(--gold);color:var(--coat);border-color:var(--gold);width:100%}
-.send:hover,.send:focus-visible{border-color:var(--focus);outline:none}
+.send{background:var(--coat);color:var(--gold-2);border-color:#5b6672;width:100%;box-shadow:0 8px 18px -8px rgba(0,0,0,.7)}
+.send:hover,.send:focus-visible{border-color:var(--focus);background:#2a3038;outline:none}
 .send:focus-visible{box-shadow:0 0 0 3px var(--focus)}
 .note{color:var(--on-dark-2);font-size:.875rem;margin-top:-8px}
+.est-photo{display:none}
 .fallback{display:none;border:2px solid #4b5866;border-radius:var(--radius);padding:16px;background:#243039}
 .fallback.show{display:block}
 .fallback pre{white-space:pre-wrap;font:500 1.0625rem/1.45 var(--font);margin:8px 0 12px}
@@ -168,6 +169,7 @@ input::placeholder,textarea::placeholder{color:#8e9cab}
 .area{background:var(--light);padding:52px 0 56px}
 .area-grid{display:grid;gap:28px}
 .area h2{margin-bottom:12px}
+.area p a{white-space:nowrap;font-weight:700;color:var(--ink)}
 .area p{color:var(--ink-2);font-size:1.25rem;max-width:36ch}
 .hours{border-collapse:collapse;font-size:1.0625rem;font-variant-numeric:tabular-nums}
 .hours th{text-align:left;padding:8px 22px 8px 0;font-weight:800}
@@ -214,6 +216,9 @@ footer{background:var(--slate-2);color:var(--on-dark);padding:44px 0 calc(40px +
   .svc-photo{display:block;margin:28px 0 0;border-radius:8px;overflow:hidden;max-width:360px;box-shadow:0 14px 30px -18px rgba(20,26,33,.6)}
   .svc-photo img{width:100%;height:auto}
   .work,.estimate{padding:80px 0 88px}
+  .est-grid{display:grid;grid-template-columns:minmax(0,640px) minmax(0,1fr);gap:56px;align-items:start}
+  .est-photo{display:block;margin:0;position:sticky;top:24px;border-radius:8px;overflow:hidden;max-width:440px;justify-self:end;box-shadow:0 18px 36px -20px rgba(0,0,0,.8)}
+  .est-photo img{width:100%;height:auto}
   .services,.area{padding:72px 0}
 }
 @media (prefers-reduced-motion:reduce){
@@ -283,7 +288,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   </div>
 </section>
 
-<svg class="rail-div" data-rail viewBox="0 0 1200 56" preserveAspectRatio="none" aria-hidden="true" style="background:var(--light)"></svg>
+<svg class="rail-div" data-rail viewBox="0 0 1200 72" aria-hidden="true" style="background:var(--light)"></svg>
 
 <section class="services" aria-labelledby="svc-h">
   <div class="wrap">
@@ -314,12 +319,13 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   </div>
 </section>
 
-<svg class="rail-div" data-rail viewBox="0 0 1200 56" preserveAspectRatio="none" aria-hidden="true" style="background:var(--light)"></svg>
+<svg class="rail-div" data-rail viewBox="0 0 1200 72" aria-hidden="true" style="background:var(--light)"></svg>
 
 <section class="estimate on-dark" id="estimate" aria-labelledby="est-h">
   <div class="wrap">
     <h2 id="est-h">Tell us about your project</h2>
     <p class="lede">Pick what you need and we’ll put it into a text for you. Add photos before you send it.</p>
+    <div class="est-grid">
     <form id="est" novalidate>
       <fieldset aria-describedby="needErr">
         <legend>What do you need?</legend>
@@ -362,6 +368,8 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         <p class="note" style="margin-top:12px">Text it to <a href="sms:+19732813208">973-281-3208</a>, or call us at the same number.</p>
       </div>
     </form>
+    <figure class="est-photo"><img src="img/work-11.webp" width="720" height="960" loading="lazy" decoding="async" alt="Black horizontal aluminum railing on side steps against blue siding"></figure>
+    </div>
   </div>
 </section>
 
@@ -446,18 +454,18 @@ function sms(body){ return 'sms:' + PHONE + '?&body=' + encodeURIComponent(body)
 
 /* ===== railing dividers: each bar takes its coat as an unseen gun passes along ===== */
 (function(){
-  var H = 56, GAP = 34, B = 4, PASS_S = 1.4;
+  var H = 72, GAP = 15, B = 4, PASS_S = 1.4;
   function bars(W, coat){
     var out = '', posts = Math.max(2, Math.round(W / 300)), span = (W - 10) / posts;
     function r(x, y, w, h){ out += '<rect x="' + Math.round(x) + '" y="' + y + '" width="' + Math.round(w) + '" height="' + h + '" rx="1"' + (coat ? ' style="transition-delay:' + (x / W * PASS_S).toFixed(2) + 's"' : '') + '/>'; }
     for (var i = 0; i < posts; i++){
       var px = i * span;
-      r(px + 10, 12, span - 10, 6);                       /* top rail, one segment per span */
-      r(px + 10, 42, span - 10, 4);                       /* bottom rail */
-      for (var x = px + 10 + GAP * .55; x < px + span - 8; x += GAP) r(x, 17, B, 26);
+      r(px + 10, 10, span - 10, 6);                       /* top rail, one segment per span */
+      r(px + 10, 58, span - 10, 4);                       /* bottom rail */
+      for (var x = px + 10 + GAP * .55; x < px + span - 8; x += GAP) r(x, 16, B, 42);   /* pickets ~3x taller than their gaps */
     }
-    for (i = 0; i <= posts; i++){ r(Math.min(i * span, W - 10), 6, 10, 46); r(Math.min(i * span, W - 10) - 2, 2, 14, 5); }   /* posts with caps */
-    r(0, 52, W, 3);                                         /* deck line */
+    for (i = 0; i <= posts; i++){ r(Math.min(i * span, W - 10), 6, 10, 62); r(Math.min(i * span, W - 10) - 2, 2, 14, 5); }   /* posts with caps */
+    r(0, 68, W, 4);                                         /* deck line */
     return out;
   }
   var els = document.querySelectorAll('[data-rail]');
@@ -486,7 +494,7 @@ function sms(body){ return 'sms:' + PHONE + '?&body=' + encodeURIComponent(body)
   var DEPOSIT_R = 7;             /* px radius of coat each grain lays down */
   var AUTO_SPEED = 0.00042;      /* autopilot sweep speed */
   var AUTO_RESUME_MS = 3500;     /* autopilot returns this long after the last touch */
-  var DONE_AT = 0.97;            /* coverage that counts as fully coated */
+  var DONE_AT = 0.92;            /* coverage that counts as fully coated; the cure catches the last specks */
   var CURE_MS = 1100;            /* matte powder flows out to semi-gloss over this long */
   var OVERSPRAY = 0.1;           /* share of grains that float off as overspray */
 
@@ -650,9 +658,13 @@ function sms(body){ return 'sms:' + PHONE + '?&body=' + encodeURIComponent(body)
   function drawGun(c, x, y, ang, a){
     if (a <= .01) return;
     c.save(); c.globalAlpha = a; c.translate(x, y); c.rotate(ang);
-    var s = phone ? .8 : 1; c.scale(s, s);
-    c.strokeStyle = '#232a31'; c.lineWidth = 5; c.lineCap = 'round';
-    c.beginPath(); c.moveTo(-18, 36); c.quadraticCurveTo(-30, 80, -80, 96); c.stroke();
+    var s = phone ? .8 : 1;
+    /* hose: from the grip down and off the bottom edge, to the booth's powder feed */
+    var ca = Math.cos(ang), sa = Math.sin(ang), hx = x + (-18 * ca - 36 * sa) * s, hy = y + (-18 * sa + 36 * ca) * s;
+    c.restore(); c.save(); c.globalAlpha = a;
+    c.strokeStyle = '#232a31'; c.lineWidth = 5 * s; c.lineCap = 'round';
+    c.beginPath(); c.moveTo(hx, hy); c.bezierCurveTo(hx, hy + 70, hx - 40, H - 30, hx - 60, H + 20); c.stroke();
+    c.translate(x, y); c.rotate(ang); c.scale(s, s);
     var gr = c.createLinearGradient(0, -6, 0, 6);
     gr.addColorStop(0, '#6c757e'); gr.addColorStop(.45, '#4a535c'); gr.addColorStop(1, '#2c333a');
     c.fillStyle = gr;
@@ -696,9 +708,11 @@ function sms(body){ return 'sms:' + PHONE + '?&body=' + encodeURIComponent(body)
   }
 
   function onMetal(x, y){
+    /* a grain within one cell (~3px) of metal lands; otherwise attracted grains hover in a dark halo */
     var hx = (x / HS) | 0, hy = (y / HS) | 0;
-    if (hx < 0 || hy < 0 || hx >= hitW || hy >= hitH) return false;
-    return hit[hy * hitW + hx] === 1;
+    if (hx < 1 || hy < 1 || hx >= hitW - 1 || hy >= hitH - 1) return false;
+    var k = hy * hitW + hx;
+    return hit[k] === 1 || hit[k - 1] === 1 || hit[k + 1] === 1 || hit[k - hitW] === 1 || hit[k + hitW] === 1;
   }
 
   function deposit(x, y, rad){
@@ -818,7 +832,7 @@ function sms(body){ return 'sms:' + PHONE + '?&body=' + encodeURIComponent(body)
     /* powder in the air, then the gun in front of it */
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.fillStyle = 'rgb(38,44,52)';
-    for (i = 0; i < parts.length; i++){ p = parts[i]; ctx.globalAlpha = Math.min(.5, p.life / (p.o ? 300 : 80)); ctx.fillRect(p.x - p.r / 2, p.y - p.r / 2, p.r, p.r); }
+    for (i = 0; i < parts.length; i++){ p = parts[i]; ctx.globalAlpha = Math.min(.3, p.life / (p.o ? 300 : 80)); ctx.fillRect(p.x - p.r / 2, p.y - p.r / 2, p.r, p.r); }
     ctx.globalAlpha = 1;
     drawGun(ctx, gun.x, gun.y, gun.ang, gun.a);
 

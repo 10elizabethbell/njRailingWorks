@@ -14,6 +14,12 @@
         "value": "<section> \"hero\": children flush against bg on top/bottom (no inset)",
         "createdAt": "2026-10-19T19:42:18.974Z",
         "reason": "Claude, by design: the hero scene is full-bleed and meets the next band edge to edge"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "sizes: 14px, 17px, 20px (ratio 1.4:1)",
+        "createdAt": "2026-10-19T19:56:44.569Z",
+        "reason": "Claude: body/helper/lead steps sit under 40-90px display headings; going to 1.25 steps would force 13px helper text on phones"
       }
     ]
   }
