@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>New Jersey Railing Works · Railings, Stairs, Fences & Gates</title>
+<meta name="description" content="Interior and exterior railings, staircase makeovers, fences and custom gates across New Jersey, from Pompton Lakes. Call or text 973-281-3208.">
+<meta name="theme-color" content="#d3dce3">
+<link rel="canonical" href="https://10elizabethbell.github.io/njRailingWorks/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="New Jersey Railing Works">
+<meta property="og:description" content="Railings, stairs, fences and gates across New Jersey. Call or text 973-281-3208.">
+<meta property="og:url" content="https://10elizabethbell.github.io/njRailingWorks/">
+<meta property="og:image" content="https://10elizabethbell.github.io/njRailingWorks/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<style>
+/* ---------- tokens ---------- */
+:root{
+  --siding:#d3dce3;      /* hero ground: blue-gray vinyl siding, as in their photos */
+  --siding-2:#c3ced7;
+  --light:#eef1f3;       /* light bands */
+  --slate:#1f2a35;       /* dark bands (never black) */
+  --slate-2:#17202a;     /* footer */
+  --ink:#141a21;         /* text on light */
+  --ink-2:#3c4855;       /* secondary text on light */
+  --on-dark:#eef2f5;
+  --on-dark-2:#b7c3ce;
+  --coat:#16191d;        /* semi-gloss black powder coat */
+  --gold:#c9a24b;        /* logo gold, trim only */
+  --gold-2:#e0bd6a;
+  --focus:#7cc0f0;       /* form outline accent: stands apart from gold fill */
+  --focus-dark:#1f6fb0;
+  --radius:10px;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overscroll-behavior-y:none;scroll-behavior:smooth}
+html{background:var(--siding)}
+body{margin:0;font:400 1.0625rem/1.55 var(--font);color:var(--ink);background:var(--slate-2);overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--gold);color:var(--coat)}
+:focus-visible{outline:3px solid var(--focus-dark);outline-offset:3px}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-weight:850;text-transform:uppercase;letter-spacing:-.01em;line-height:1.02;margin:0;text-wrap:balance}
+h2{font-size:clamp(2rem,8vw,3.4rem)}
+p{margin:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:56px;padding:0 22px;border-radius:var(--radius);
+  font:800 1.0625rem/1.1 var(--font);text-decoration:none;text-align:center;border:2px solid var(--coat);cursor:pointer;
+  transition:background-color .2s,color .2s,transform .15s,box-shadow .2s}
+.btn:active{transform:translateY(1px)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-coat{background:var(--coat);color:var(--gold-2);box-shadow:0 6px 16px -6px rgba(20,26,33,.55)}
+.btn-coat:hover{background:#2a3038}
+.btn-line{background:transparent;color:var(--coat)}
+.btn-line:hover{background:rgba(22,25,29,.08)}
+
+/* ---------- header ---------- */
+.top{position:relative;z-index:3;background:var(--siding)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:68px;padding-top:10px;padding-bottom:6px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.brand img{width:44px;height:44px;border-radius:50%;flex:none;box-shadow:0 3px 8px -3px rgba(0,0,0,.45)}
+.brand b{font-weight:850;font-size:.875rem;line-height:1.08;text-transform:uppercase;letter-spacing:.01em}
+.brand b span{display:block}
+.phone{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 4px;font-weight:850;font-size:1.0625rem;text-decoration:none;white-space:nowrap;color:var(--coat)}
+.phone svg{width:18px;height:18px;color:#8a6a1f}
+.phone:hover{text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:3px;text-underline-offset:5px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:var(--siding)}
+.hero .wrap{display:grid;grid-template-columns:1fr}
+.hero-copy{padding:18px 0 8px;position:relative;z-index:2}
+.hero h1{font-size:clamp(2.55rem,12.4vw,5.6rem);max-width:11ch}
+.promise{margin-top:14px;font-size:clamp(1.0625rem,4.6vw,1.25rem);line-height:1.45;color:var(--ink-2);max-width:34ch}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.cta .btn{flex:1 1 140px;padding:0 10px;white-space:nowrap}
+@media (max-width:419px){.cta .btn svg{display:none}}
+.scene{position:relative;height:clamp(300px,46svh,440px);margin:0 -16px;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.scene canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.scene-fallback{position:absolute;inset:0;background:linear-gradient(var(--siding),var(--siding-2))}
+.scene-hint{position:absolute;left:16px;top:10px;font-size:.875rem;font-weight:700;color:var(--ink-2);pointer-events:none;transition:opacity .6s}
+.scene-hint.gone{opacity:0}
+
+/* ---------- railing divider ---------- */
+.rail-div{display:block;width:100%;height:46px;overflow:visible;padding-top:14px;box-sizing:content-box}
+.rail-div .bare{fill:#a3abb2}
+.rail-div .coat{fill:var(--coat);clip-path:inset(0 100% 0 0);transition:clip-path 1.8s cubic-bezier(.22,1,.36,1)}
+.rail-div.on .coat{clip-path:inset(0 0 0 0)}
+.on-dark .rail-div .bare{fill:#5d6975}
+.on-dark .rail-div .coat{fill:#0f1317}
+
+/* ---------- work ---------- */
+.work{background:var(--slate);color:var(--on-dark);padding:56px 0 64px}
+.work h2{margin-bottom:22px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.grid figure{margin:0;border-radius:8px;overflow:hidden;background:#2a3642;aspect-ratio:3/4;box-shadow:0 10px 24px -14px rgba(0,0,0,.7)}
+.grid figure:first-child{grid-column:1/-1}
+.grid img{width:100%;height:100%;object-fit:cover}
+.more{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:22px;min-height:64px;padding:12px 18px;border-radius:var(--radius);
+  background:var(--gold);color:var(--coat);font-weight:850;font-size:1.25rem;text-decoration:none;box-shadow:0 10px 22px -12px rgba(0,0,0,.7);transition:background-color .2s}
+.more:hover{background:var(--gold-2)}
+.more small{display:block;font-weight:600;font-size:.875rem;opacity:.8}
+.more svg{width:28px;height:28px;flex:none}
+
+/* ---------- services ---------- */
+.services{background:var(--light);padding:52px 0 56px}
+.services h2{margin-bottom:14px}
+.rows{list-style:none;margin:0;padding:0}
+.row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding:8px 0;border-bottom:1px solid #cdd5dc;text-decoration:none;font-weight:800;font-size:1.25rem;text-transform:uppercase;letter-spacing:.005em}
+.row:hover,.row:focus-visible{outline:none;background:none;box-shadow:none}
+.arrow{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#dfe5ea;color:var(--coat);flex:none;transition:background-color .2s,color .2s}
+.arrow svg{width:20px;height:20px}
+.row:hover .arrow,.row:focus-visible .arrow{background:var(--coat);color:var(--gold-2)}
+.row:focus-visible .arrow{outline:3px solid var(--focus-dark);outline-offset:3px}
+.materials{margin-top:16px;color:var(--ink-2)}
+
+/* ---------- how ---------- */
+.how{background:var(--light);padding:8px 0 60px}
+.how h2{margin-bottom:22px}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:22px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.steps li::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--coat);color:var(--gold-2);font-weight:850;font-size:1.25rem}
+.steps h3{font-size:1.25rem;margin:9px 0 6px}
+.steps p{color:var(--ink-2);max-width:46ch}
+
+/* ---------- estimate ---------- */
+.estimate{background:var(--slate);color:var(--on-dark);padding:56px 0 64px}
+.estimate h2{margin-bottom:10px}
+.estimate .lede{color:var(--on-dark-2);max-width:44ch;margin-bottom:24px}
+form{display:grid;gap:20px;max-width:640px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend,label.l{display:block;font-weight:800;margin-bottom:9px;font-size:1.0625rem}
+legend small,label.l small{font-weight:500;color:var(--on-dark-2)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.chip span{display:inline-flex;align-items:center;min-height:48px;padding:0 16px;border-radius:999px;border:2px solid #4b5866;background:#283440;font-weight:700;cursor:pointer;transition:background-color .15s,border-color .15s,color .15s}
+.chip span:hover{border-color:var(--focus)}
+.chip input:focus-visible+span{outline:3px solid var(--focus);outline-offset:2px}
+.chip input:checked+span{background:var(--gold);border-color:var(--gold);color:var(--coat)}
+.chip input:checked+span:hover{border-color:var(--focus)}
+input[type=text],textarea{width:100%;font:500 1.0625rem/1.4 var(--font);color:var(--on-dark);background:#283440;border:2px solid #4b5866;border-radius:var(--radius);padding:14px;min-height:54px;transition:border-color .15s}
+textarea{min-height:110px;resize:vertical}
+input[type=text]:hover,textarea:hover,input[type=text]:focus,textarea:focus{border-color:var(--focus);outline:none}
+input::placeholder,textarea::placeholder{color:#8e9cab}
+.err{color:#ffb4a8;font-weight:700;font-size:1.0625rem;margin-top:8px}
+.err:empty{display:none}
+.send{background:var(--gold);color:var(--coat);border-color:var(--gold);width:100%}
+.send:hover,.send:focus-visible{border-color:var(--focus);outline:none}
+.send:focus-visible{box-shadow:0 0 0 3px var(--focus)}
+.note{color:var(--on-dark-2);font-size:.875rem;margin-top:-8px}
+.fallback{display:none;border:2px solid #4b5866;border-radius:var(--radius);padding:16px;background:#243039}
+.fallback.show{display:block}
+.fallback pre{white-space:pre-wrap;font:500 1.0625rem/1.45 var(--font);margin:8px 0 12px}
+.fallback .btn{min-height:48px;border-color:var(--on-dark-2);color:var(--on-dark);background:transparent}
+.fallback .btn:hover{border-color:var(--focus)}
+.fallback a{font-weight:800;color:var(--gold-2)}
+
+/* ---------- area ---------- */
+.area{background:var(--light);padding:52px 0 56px}
+.area-grid{display:grid;gap:28px}
+.area h2{margin-bottom:12px}
+.area p{color:var(--ink-2);font-size:1.25rem;max-width:36ch}
+.hours{border-collapse:collapse;font-size:1.0625rem;font-variant-numeric:tabular-nums}
+.hours th{text-align:left;padding:8px 22px 8px 0;font-weight:800}
+.hours td{padding:8px 0;color:var(--ink-2)}
+.hours tr+tr{border-top:1px solid #cdd5dc}
+
+/* ---------- footer ---------- */
+footer{background:var(--slate-2);color:var(--on-dark);padding:44px 0 calc(40px + env(safe-area-inset-bottom))}
+.foot{display:grid;gap:22px}
+.foot .brand img{width:56px;height:56px}
+.foot .brand b{font-size:1rem}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.foot a{display:inline-flex;align-items:center;gap:10px;min-height:44px;text-decoration:none;font-weight:700}
+.foot a:hover{color:var(--gold-2)}
+.foot svg{width:20px;height:20px;color:var(--gold)}
+.foot .fine{color:var(--on-dark-2);font-size:.875rem}
+
+/* ---------- larger screens ---------- */
+@media (min-width:700px){
+  .grid{grid-template-columns:repeat(3,1fr);gap:12px}
+  .grid figure:first-child{grid-column:auto}
+  .steps{grid-template-columns:repeat(3,1fr);gap:28px}
+  .steps li{grid-template-columns:1fr}
+  .more{max-width:560px}
+  .area-grid{grid-template-columns:1.2fr 1fr;align-items:start}
+  .foot{grid-template-columns:1.2fr 1fr 1fr;align-items:start}
+}
+@media (min-width:960px){
+  .top .wrap{min-height:84px}
+  .brand b{font-size:1rem}
+  .brand b span{display:inline}
+  .phone{font-size:1.25rem}
+  .wrap{padding:0 32px}
+  .hero{overflow:hidden}
+  .hero .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center;min-height:min(700px,calc(100svh - 84px))}
+  .hero-copy{padding:24px 0 96px;pointer-events:none}
+  .hero-copy a{pointer-events:auto}
+  .cta .btn{flex:0 0 auto;padding:0 26px}
+  .scene{position:absolute;inset:0;height:auto;margin:0}
+  .scene-hint{left:auto;right:32px;top:14px}
+  .services .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+  .work,.estimate{padding:80px 0 88px}
+  .services,.area{padding:72px 0}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rail-div .coat{transition:none;clip-path:none}
+  .btn,.arrow,.chip span{transition:none}
+}
+</style>
+</head>
+<body>
+<!--
+THESIS: The page is a powder-coat line: a bare aluminum railing on a New Jersey stoop that the visitor sprays semi-gloss black with a finger, the finish NJ Railing Works puts on nearly every job. Refuses the contractor default of a stock-photo hero, a stat row and icon cards.
+OWN-WORLD: Blue-gray vinyl siding ground (#d3dce3), stone steps, mill-finish aluminum that turns coat black (#16191d) under a powder mist; logo gold (#c9a24b) only as trim on black buttons and dark slate bands (#1f2a35). Heavy uppercase system sans, railing-run dividers that coat themselves on view.
+STORY: A homeowner sees their kind of stoop, coats the railing, sees nine real jobs, and texts a photo of their own steps.
+FIRST VIEWPORT: Phone: logo + name left, 973-281-3208 top right; "Railings you'll be proud of." large; one promise line; Text us a photo (black) and Get an estimate (outlined) side by side; the stoop scene beneath, auto-spraying until touched. Desktop: copy left, scene right half.
+FORM: Powder-coat booth, candidate 7 of 7, seed key a7cd1990.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish reviewer and the documenter.
+-->
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="New Jersey Railing Works, back to top">
+      <img src="img/logo.webp" width="100" height="100" alt="">
+      <b><span>New Jersey</span> <span>Railing Works</span></b>
+    </a>
+    <a class="phone" href="tel:+19732813208"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>973-281-3208</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <h1>Railings you’ll be proud of.</h1>
+      <p class="promise">Built to last through every New Jersey winter, and handled start to finish, from tearing out the old one to the last coat of finish.</p>
+      <div class="cta">
+        <a class="btn btn-coat" id="textPhoto" href="sms:+19732813208?&body=Hi%20New%20Jersey%20Railing%20Works!%20I'm%20planning%20a%20project.%20Here's%20a%20photo%20of%20what%20I%20have%20now%3A"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Text us a photo</a>
+        <a class="btn btn-line" href="#estimate">Get an estimate</a>
+      </div>
+    </div>
+    <div class="scene" id="scene" aria-label="Animated drawing: a bare aluminum stair railing that turns black as you drag across it, like powder coating" role="img">
+      <div class="scene-fallback"></div>
+      <canvas id="coat"></canvas>
+      <p class="scene-hint" id="hint">Drag across the railing to coat it</p>
+    </div>
+  </div>
+</section>
+
+<section class="work on-dark" aria-labelledby="work-h">
+  <div class="wrap">
+    <h2 id="work-h">Our work</h2>
+    <div class="grid">
+      <figure><img src="img/work-01.webp" srcset="img/work-01.webp 720w, img/work-01-lg.webp 1080w" sizes="(min-width:700px) 33vw, 100vw" width="720" height="959" loading="lazy" decoding="async" alt="Black horizontal aluminum railings on concrete front steps"></figure>
+      <figure><img src="img/work-06.webp" srcset="img/work-06.webp 720w, img/work-06-lg.webp 1080w" sizes="(min-width:700px) 33vw, 50vw" width="720" height="960" loading="lazy" decoding="async" alt="Staircase with new oak treads, a wood handrail and black iron balusters"></figure>
+      <figure><img src="img/work-03.webp" srcset="img/work-03.webp 720w, img/work-03-lg.webp 1080w" sizes="(min-width:700px) 33vw, 50vw" width="720" height="774" loading="lazy" decoding="async" alt="Black aluminum railings on new stone front steps"></figure>
+      <figure><img src="img/work-04.webp" srcset="img/work-04.webp 720w, img/work-04-lg.webp 1080w" sizes="(min-width:700px) 33vw, 50vw" width="720" height="960" loading="lazy" decoding="async" alt="Indoor horizontal railing with a matching custom gate at the top of the stairs"></figure>
+      <figure><img src="img/work-07.webp" srcset="img/work-07.webp 720w, img/work-07-lg.webp 1080w" sizes="(min-width:700px) 33vw, 50vw" width="720" height="960" loading="lazy" decoding="async" alt="Oak staircase with a wood rail and decorative iron balusters"></figure>
+      <figure><img src="img/work-02.webp" srcset="img/work-02.webp 720w, img/work-02-lg.webp 1080w" sizes="(min-width:700px) 33vw, 50vw" width="720" height="960" loading="lazy" decoding="async" alt="Horizontal aluminum railing around a stone back stoop"></figure>
+      <figure><img src="img/work-05.webp" srcset="img/work-05.webp 720w, img/work-05-lg.webp 1080w" sizes="(min-width:700px) 33vw, 50vw" width="720" height="960" loading="lazy" decoding="async" alt="Black horizontal railing along an open indoor staircase"></figure>
+      <figure><img src="img/work-08.webp" srcset="img/work-08.webp 720w, img/work-08-lg.webp 1080w" sizes="(min-width:700px) 33vw, 50vw" width="720" height="960" loading="lazy" decoding="async" alt="Stained oak stair treads with a wood railing"></figure>
+      <figure><img src="img/work-09.webp" srcset="img/work-09.webp 720w, img/work-09-lg.webp 1080w" sizes="(min-width:700px) 33vw, 50vw" width="720" height="924" loading="lazy" decoding="async" alt="Black aluminum railing on paver back steps"></figure>
+    </div>
+    <a class="more" href="https://www.instagram.com/newjerseyrailings/">
+      <span>Click to see more of our work.<small>@newjerseyrailings on Instagram</small></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+  </div>
+</section>
+
+<svg class="rail-div" data-rail viewBox="0 0 1200 46" preserveAspectRatio="none" aria-hidden="true" style="background:var(--light)"></svg>
+
+<section class="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <div>
+      <h2 id="svc-h">What we build</h2>
+      <p class="materials">In aluminum, iron, wood and vinyl, inside and out. Tap one to text us about it.</p>
+    </div>
+    <ul class="rows" id="rows">
+      <li><a class="row" data-svc="outdoor railings">Outdoor railings<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li><a class="row" data-svc="indoor railings">Indoor railings<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li><a class="row" data-svc="a staircase makeover">Staircase makeovers<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li><a class="row" data-svc="a fence">Fences<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li><a class="row" data-svc="a custom gate">Custom gates<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li><a class="row" data-svc="a repair">Repairs<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <h2 id="how-h">How it works</h2>
+    <ol class="steps">
+      <li><div><h3>Send us a photo</h3><p>Text a picture of the stairs, porch or yard as it is now, or give us a call.</p></div></li>
+      <li><div><h3>We plan it with you</h3><p>Style, material and finish, picked to suit your house, and a price before any work starts.</p></div></li>
+      <li><div><h3>We build and finish it</h3><p>Demo, install, stain and finish. We handle every step ourselves, so you deal with one crew the whole way.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="estimate on-dark" id="estimate" aria-labelledby="est-h">
+  <div class="wrap">
+    <h2 id="est-h">Tell us about your project</h2>
+    <p class="lede">Pick what you need and we’ll put it into a text for you. Add photos before you send it.</p>
+    <form id="est" novalidate>
+      <fieldset>
+        <legend>What do you need?</legend>
+        <div class="chips" id="need">
+          <label class="chip"><input type="checkbox" name="need" value="Railings"><span>Railings</span></label>
+          <label class="chip"><input type="checkbox" name="need" value="Stairs"><span>Stairs</span></label>
+          <label class="chip"><input type="checkbox" name="need" value="Fence"><span>Fence</span></label>
+          <label class="chip"><input type="checkbox" name="need" value="Gate"><span>Gate</span></label>
+          <label class="chip"><input type="checkbox" name="need" value="Repair"><span>Repair</span></label>
+        </div>
+        <p class="err" id="needErr" aria-live="polite"></p>
+      </fieldset>
+      <fieldset>
+        <legend>Inside or outside? <small>(optional)</small></legend>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="where" value="Inside"><span>Inside</span></label>
+          <label class="chip"><input type="radio" name="where" value="Outside"><span>Outside</span></label>
+          <label class="chip"><input type="radio" name="where" value="Both"><span>Both</span></label>
+        </div>
+      </fieldset>
+      <div>
+        <label class="l" for="name">Your name</label>
+        <input type="text" id="name" name="name" autocomplete="name" placeholder="First name is fine">
+        <p class="err" id="nameErr" aria-live="polite"></p>
+      </div>
+      <div>
+        <label class="l" for="town">Town <small>(optional)</small></label>
+        <input type="text" id="town" name="town" autocomplete="address-level2" placeholder="e.g. Wayne">
+      </div>
+      <div>
+        <label class="l" for="notes">Anything else? <small>(optional)</small></label>
+        <textarea id="notes" name="notes" placeholder="Number of steps, the style you like, when you’d like it done"></textarea>
+      </div>
+      <button class="btn send" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Text this to us</button>
+      <p class="note">Opens your texting app with your message filled in. Nothing is sent until you press send.</p>
+      <div class="fallback" id="fallback" aria-live="polite">
+        <strong>Here’s your message:</strong>
+        <pre id="msg"></pre>
+        <button class="btn" type="button" id="copy">Copy message</button>
+        <p class="note" style="margin-top:12px">Text it to <a href="sms:+19732813208">973-281-3208</a>, or call us at the same number.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="area" aria-labelledby="area-h">
+  <div class="wrap area-grid">
+    <div>
+      <h2 id="area-h">All of New Jersey</h2>
+      <p>We work all over the state, from our home base in Pompton Lakes.</p>
+    </div>
+    <table class="hours">
+      <caption class="sr">Hours</caption>
+      <tr><th scope="row">Monday–Friday</th><td>9 am – 6 pm</td></tr>
+      <tr><th scope="row">Saturday</th><td>10 am – 3 pm</td></tr>
+    </table>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a class="brand" href="#top"><img src="img/logo.webp" width="100" height="100" alt=""><b><span>New Jersey</span> <span>Railing Works LLC</span></b></a>
+      <p class="fine" style="margin-top:10px">Pompton Lakes, NJ · Serving all of New Jersey</p>
+    </div>
+    <ul>
+      <li><a href="tel:+19732813208"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>973-281-3208</a></li>
+      <li><a href="mailto:njrailingworks@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>njrailingworks@gmail.com</a></li>
+      <li><a href="https://www.instagram.com/newjerseyrailings/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/></svg>@newjerseyrailings</a></li>
+    </ul>
+    <p class="fine">Mon–Fri 9 am – 6 pm<br>Sat 10 am – 3 pm<br><br>© 2026 New Jersey Railing Works LLC</p>
+  </div>
+</footer>
+
+<script>
+/* ===== shared ===== */
+var PHONE = '+19732813208';
+var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function sms(body){ return 'sms:' + PHONE + '?&body=' + encodeURIComponent(body); }
+
+/* ===== service rows: each opens a pre-filled text ===== */
+(function(){
+  document.querySelectorAll('.row[data-svc]').forEach(function(a){
+    a.href = sms('Hi New Jersey Railing Works! I’m interested in ' + a.dataset.svc + '. Here’s a photo of what I have now:');
+  });
+})();
+
+/* ===== estimate form -> text message ===== */
+(function(){
+  var f = document.getElementById('est'), fb = document.getElementById('fallback'), msg = document.getElementById('msg');
+  var needErr = document.getElementById('needErr'), nameErr = document.getElementById('nameErr');
+  function compose(){
+    var need = [].slice.call(f.querySelectorAll('input[name=need]:checked')).map(function(i){return i.value});
+    var where = (f.querySelector('input[name=where]:checked')||{}).value;
+    var name = f.name.value.trim(), town = f.town.value.trim(), notes = f.notes.value.trim();
+    var lines = ['Hi New Jersey Railing Works! I’d like an estimate.', 'Project: ' + need.join(', ') + (where ? ' (' + where.toLowerCase() + ')' : '')];
+    if (town) lines.push('Town: ' + town);
+    if (notes) lines.push('Details: ' + notes);
+    lines.push('Name: ' + name);
+    return { need: need, name: name, text: lines.join('\n') };
+  }
+  f.addEventListener('change', function(){ if (f.querySelector('input[name=need]:checked')) needErr.textContent = ''; });
+  f.name.addEventListener('input', function(){ if (f.name.value.trim()) nameErr.textContent = ''; });
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    var m = compose(), ok = true;
+    needErr.textContent = m.need.length ? '' : 'Pick at least one so we know what you need.';
+    nameErr.textContent = m.name ? '' : 'Add your name so we know who’s texting.';
+    if (!m.need.length){ ok = false; f.querySelector('input[name=need]').focus(); }
+    else if (!m.name){ ok = false; f.name.focus(); }
+    if (!ok) return;
+    msg.textContent = m.text;
+    fb.classList.add('show');
+    window.location.href = sms(m.text);
+  });
+  document.getElementById('copy').addEventListener('click', function(){
+    var b = this;
+    try { navigator.clipboard.writeText(msg.textContent).then(function(){ b.textContent = 'Copied'; }, function(){ b.textContent = 'Select the text above to copy'; }); }
+    catch(_){ b.textContent = 'Select the text above to copy'; }
+  });
+})();
+
+/* ===== railing dividers: coat themselves when scrolled into view ===== */
+(function(){
+  var H = 46, GAP = 22, B = 4, W = 1200;
+  function bars(){
+    var s = '<rect x="0" y="4" width="' + W + '" height="7" rx="2"/><rect x="0" y="36" width="' + W + '" height="5" rx="1"/>';
+    var posts = Math.max(2, Math.round(W / 260)), span = (W - 10) / posts;
+    for (var i = 0; i <= posts; i++) s += '<rect x="' + Math.round(i * span) + '" y="0" width="10" height="44" rx="1"/>';
+    for (var x = 14; x < W - 8; x += GAP){ var nearPost = (x % span) < 14 || (span - x % span) < 8; if (!nearPost) s += '<rect x="' + x + '" y="9" width="' + B + '" height="29"/>'; }
+    return s;
+  }
+  var els = document.querySelectorAll('[data-rail]');
+  function draw(){
+    els.forEach(function(svg){
+      W = Math.max(320, Math.round(svg.getBoundingClientRect().width));
+      if (svg._w === W) return; svg._w = W;
+      svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+      svg.innerHTML = '<g class="bare">' + bars() + '</g><g class="coat">' + bars() + '</g>';
+    });
+  }
+  draw(); window.addEventListener('resize', draw);
+  if (REDUCED || !('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('on'); }); return; }
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } }); }, { threshold: .6 });
+  els.forEach(function(e){ io.observe(e); });
+})();
+
+/* ===== hero: spray the bare railing with powder coat ===== */
+(function(){
+  /* tunables */
+  var DPR_CAP = 1.5;
+  var SPRAY_PER_FRAME = 22;      /* particles per frame while spraying (phones get 60%) */
+  var MAX_PARTICLES = 1600;
+  var ATTRACT_R = 30;            /* px: powder pulled toward metal within this distance (electrostatic wrap) */
+  var ATTRACT = 0.05;
+  var DEPOSIT_R = 7;             /* px radius of coat each grain lays down */
+  var AUTO_SPEED = 0.00042;      /* autopilot sweep speed */
+  var AUTO_RESUME_MS = 3500;     /* autopilot returns this long after the last touch */
+  var MOTES = 46;                /* loose powder drifting in the air */
+
+  var scene = document.getElementById('scene'), cv = document.getElementById('coat'), hint = document.getElementById('hint');
+  var ctx = cv.getContext('2d');
+  var phone = window.matchMedia('(max-width: 700px)').matches;
+  var W = 0, H = 0, dpr = 1;
+  var bg, bare, coat, mask, mctx, work, wctx, hit, hitW, hitH, HS = 3, samples = null;
+  var balusters = [], rails = [];
+  var parts = [], motes = [];
+  var ptr = { x: 0, y: 0, cx: 0, cy: 0, vx: 0, vy: 0, active: false, last: 0, seen: false };
+  var auto = { t: 0, on: true }, coverage = 0, running = false, visible = true, rafId = 0;
+
+  function mk(w, h){ var c = document.createElement('canvas'); c.width = w; c.height = h; return c; }
+
+  /* geometry, in CSS px */
+  function layout(){
+    rails = []; balusters = [];
+    var desk = W > 600;
+    var groundY = H * (desk ? 0.9 : 0.93);
+    var wide = W >= 900;
+    var x0 = W * (wide ? 0.52 : desk ? 0.1 : 0.07), x1 = W * (wide ? 0.8 : desk ? 0.66 : 0.64), x2 = W * (wide ? 0.95 : desk ? 0.94 : 0.9);
+    var rise = H * (wide ? 0.38 : desk ? 0.4 : 0.36);
+    g0wide = wide;
+    var topY = groundY - rise;
+    var railH = Math.max(86, H * 0.3);
+    var b = Math.max(5, Math.min(9, W * 0.011));   /* 3/4" baluster */
+    var post = b * 2.7;                             /* 2" post */
+    var gap = b * 5.2;
+    var steps = 5;
+    var g = { groundY: groundY, x0: x0, x1: x1, x2: x2, topY: topY, railH: railH, b: b, post: post, steps: steps };
+    /* stair line: y at x along the slope, landing flat after x1 */
+    g.stairY = function(x){ if (x >= x1) return topY; if (x <= x0) return groundY; return groundY - (x - x0) / (x1 - x0) * rise; };
+    /* handrail and bottom rail as polylines */
+    var hr = railH, br = b * 2.4;
+    rails.push({ pts: [[x0, groundY - hr], [x1, topY - hr], [x2, topY - hr]], th: b * 1.6 });
+    rails.push({ pts: [[x0, groundY - br], [x1, topY - br], [x2, topY - br]], th: b * 1.1 });
+    for (var x = x0 + post + gap * .7; x < x2 - post - b; x += gap){
+      if (Math.abs(x - x1) < post) continue;
+      var sy = g.stairY(x);
+      balusters.push({ x: x, w: b, top: sy - hr, bot: sy - br });
+    }
+    g.posts = [x0, x1, x2].map(function(px){ var sy = g.stairY(px); return { x: px - post / 2, w: post, top: sy - hr - b * 1.4, bot: sy + 2 }; });
+    return g;
+  }
+
+  function railPath(c, g){
+    c.beginPath();
+    balusters.forEach(function(k){ c.rect(k.x - k.w / 2, k.top, k.w, k.bot - k.top); });
+    g.posts.forEach(function(p){ c.rect(p.x, p.top, p.w, p.bot - p.top); });
+    rails.forEach(function(r){
+      var t = r.th / 2, p = r.pts;
+      c.moveTo(p[0][0], p[0][1] - t); c.lineTo(p[1][0], p[1][1] - t); c.lineTo(p[2][0], p[2][1] - t);
+      c.lineTo(p[2][0], p[2][1] + t); c.lineTo(p[1][0], p[1][1] + t); c.lineTo(p[0][0], p[0][1] + t); c.closePath();
+    });
+  }
+
+  /* metal with body: broad side shading per bar, no hairline glints */
+  function paintMetal(c, g, base, lit, shade){
+    c.save(); railPath(c, g); c.clip();
+    c.fillStyle = base; c.fillRect(0, 0, W, H);
+    balusters.concat(g.posts).forEach(function(k){
+      var x = k.x - (k.w === g.b ? k.w / 2 : 0), w = k.w;
+      var gr = c.createLinearGradient(x, 0, x + w, 0);
+      gr.addColorStop(0, shade); gr.addColorStop(.32, lit); gr.addColorStop(.6, base); gr.addColorStop(1, shade);
+      c.fillStyle = gr; c.fillRect(x, k.top - 2, w, k.bot - k.top + 4);
+    });
+    rails.forEach(function(r){
+      var p = r.pts, t = r.th / 2;
+      for (var i = 0; i < 2; i++){
+        var ax = p[i][0], ay = p[i][1], bx = p[i + 1][0], by = p[i + 1][1];
+        var gr = c.createLinearGradient(0, Math.min(ay, by) - t, 0, Math.min(ay, by) + t);
+        gr.addColorStop(0, lit); gr.addColorStop(.55, base); gr.addColorStop(1, shade);
+        c.save(); c.beginPath(); c.moveTo(ax, ay - t); c.lineTo(bx, by - t); c.lineTo(bx, by + t); c.lineTo(ax, ay + t); c.closePath(); c.clip();
+        if (ay !== by){ c.translate(0, 0); }
+        c.fillStyle = gr; c.fillRect(Math.min(ax, bx), Math.min(ay, by) - t - 2, Math.abs(bx - ax), Math.abs(by - ay) + 2 * t + 4);
+        c.restore();
+      }
+    });
+    c.restore();
+  }
+
+  function paintBackground(c, g){
+    /* siding: overlapping courses with soft shadow under each lap, fading in from the page ground */
+    var course = Math.max(16, H * 0.052);
+    c.fillStyle = '#d3dce3'; c.fillRect(0, 0, W, H);
+    for (var y = H * 0.06; y < g.groundY; y += course){
+      var a = Math.min(1, (y - H * 0.04) / (H * 0.28));
+      var gr = c.createLinearGradient(0, y, 0, y + course);
+      gr.addColorStop(0, 'rgba(120,138,153,' + (0.28 * a) + ')');
+      gr.addColorStop(.18, 'rgba(255,255,255,' + (0.18 * a) + ')');
+      gr.addColorStop(1, 'rgba(160,175,188,' + (0.12 * a) + ')');
+      c.fillStyle = gr; c.fillRect(0, y, W, course);
+    }
+    if (g0wide){
+      var fz = c.createLinearGradient(0, 0, g.x0 - g.post * 2, 0);
+      fz.addColorStop(0, '#d3dce3'); fz.addColorStop(.62, '#d3dce3'); fz.addColorStop(1, 'rgba(211,220,227,0)');
+      c.fillStyle = fz; c.fillRect(0, 0, g.x0, g.groundY - 6);
+    }
+    /* foundation band and ground */
+    c.fillStyle = '#a9b3b8'; c.fillRect(0, g.groundY - 6, W, 6);
+    var gg = c.createLinearGradient(0, g.groundY, 0, H);
+    gg.addColorStop(0, '#8f9a8a'); gg.addColorStop(1, '#6f7b69');
+    c.fillStyle = gg; c.fillRect(0, g.groundY, W, H - g.groundY);
+    /* stone steps: treads and risers under the slope, plus the landing block */
+    var n = g.steps, run = (g.x1 - g.x0) / n, riseStep = (g.groundY - g.topY) / n;
+    c.fillStyle = '#9d968b';
+    c.beginPath(); c.moveTo(g.x0 - g.post, g.groundY);
+    for (var i = 0; i < n; i++){
+      var sx = g.x0 - g.post + i * run, ty = g.groundY - (i + 1) * riseStep;
+      c.lineTo(sx, ty); c.lineTo(sx + run, ty);
+    }
+    c.lineTo(g.x2 + g.post, g.topY); c.lineTo(g.x2 + g.post, g.groundY); c.closePath(); c.fill();
+    for (i = 0; i < n; i++){
+      sx = g.x0 - g.post + i * run; ty = g.groundY - (i + 1) * riseStep;
+      var tg = c.createLinearGradient(0, ty, 0, ty + riseStep);
+      tg.addColorStop(0, '#c9c2b6'); tg.addColorStop(.16, '#b7b0a4'); tg.addColorStop(.2, '#8d867b'); tg.addColorStop(1, '#a29b90');
+      c.fillStyle = tg; c.fillRect(sx, ty, (i === n - 1 ? g.x2 + g.post - sx : run), riseStep);
+    }
+    var lg = c.createLinearGradient(0, g.topY, 0, g.groundY);
+    lg.addColorStop(0, '#c9c2b6'); lg.addColorStop(.06, '#a39c91'); lg.addColorStop(1, '#8b8479');
+    c.fillStyle = lg; c.fillRect(g.x1 + run * .0, g.topY, g.x2 + g.post - g.x1, g.groundY - g.topY);
+    /* soft contact shadow of the railing on the steps */
+    c.save(); c.globalAlpha = .18; c.filter = 'blur(6px)'; c.translate(6, 10); railPath(c, g); c.fillStyle = '#26303a'; c.fill(); c.restore();
+  }
+
+  var G = null, g0wide = false;
+  function build(){
+    var r = scene.getBoundingClientRect();
+    var nw = Math.round(r.width), nh = Math.round(r.height);
+    if (nw === W && nh === H) return false;
+    W = nw; H = nh; dpr = Math.min(window.devicePixelRatio || 1, DPR_CAP);
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    G = layout();
+    bg = mk(cv.width, cv.height); bare = mk(cv.width, cv.height); coat = mk(cv.width, cv.height);
+    mask = mk(cv.width, cv.height); work = mk(cv.width, cv.height);
+    mctx = mask.getContext('2d'); wctx = work.getContext('2d');
+    var b1 = bg.getContext('2d'); b1.scale(dpr, dpr); paintBackground(b1, G);
+    var b2 = bare.getContext('2d'); b2.scale(dpr, dpr); paintMetal(b2, G, '#a7aeb4', '#d7dce0', '#7f878e');
+    var b3 = coat.getContext('2d'); b3.scale(dpr, dpr); paintMetal(b3, G, '#17191c', '#454b53', '#0b0c0e');
+    mctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    /* hit map at 1/HS resolution, plus coverage samples */
+    hitW = Math.ceil(W / HS); hitH = Math.ceil(H / HS);
+    var hc = mk(hitW, hitH), hx = hc.getContext('2d');
+    hx.scale(1 / HS, 1 / HS); railPath(hx, G); hx.fillStyle = '#000'; hx.fill();
+    var d = hx.getImageData(0, 0, hitW, hitH).data; hit = new Uint8Array(hitW * hitH);
+    samples = [];
+    for (var i = 0; i < hit.length; i++){ if (d[i * 4 + 3] > 128){ hit[i] = 1; if (i % 7 === 0) samples.push(i); } }
+    coverage = 0; parts = []; seedMotes();
+    return true;
+  }
+
+  function seedMotes(){
+    motes = [];
+    var n = phone ? Math.round(MOTES * .6) : MOTES;
+    var mx0 = g0wide ? G.x0 - 60 : 0;
+    for (var i = 0; i < n; i++) motes.push({ x: mx0 + Math.random() * (W - mx0), y: Math.random() * H * .8, ox: 0, oy: 0, vx: 0, vy: 0, ph: Math.random() * 6.28, sp: .3 + Math.random() * .7, r: .8 + Math.random() * 1.6 });
+  }
+
+  function onMetal(x, y){
+    var hx = (x / HS) | 0, hy = (y / HS) | 0;
+    if (hx < 0 || hy < 0 || hx >= hitW || hy >= hitH) return false;
+    return hit[hy * hitW + hx] === 1;
+  }
+
+  function spray(x, y, vx, vy, n){
+    for (var i = 0; i < n && parts.length < MAX_PARTICLES; i++){
+      var a = Math.random() * 6.283, s = .6 + Math.random() * 2.8;
+      parts.push({ x: x + (Math.random() - .5) * 10, y: y + (Math.random() - .5) * 10, vx: Math.cos(a) * s + vx * .35, vy: Math.sin(a) * s + vy * .35, life: 70 + Math.random() * 60, r: .7 + Math.random() * 1.3 });
+    }
+  }
+
+  function attract(p){
+    /* pull toward the nearest baluster horizontally, and toward rails vertically */
+    var best = null, bd = ATTRACT_R;
+    for (var i = 0; i < balusters.length; i++){
+      var k = balusters[i], dx = k.x - p.x;
+      if (dx > bd) break;
+      if (-dx < bd && p.y > k.top - 6 && p.y < k.bot + 6){ bd = Math.abs(dx); best = dx; }
+    }
+    if (best !== null) p.vx += best * ATTRACT;
+    for (i = 0; i < rails.length; i++){
+      var pts = rails[i].pts, ry;
+      if (p.x < pts[0][0] || p.x > pts[2][0]) continue;
+      ry = p.x < pts[1][0] ? pts[0][1] + (p.x - pts[0][0]) / (pts[1][0] - pts[0][0]) * (pts[1][1] - pts[0][1]) : pts[1][1];
+      var dy = ry - p.y;
+      if (Math.abs(dy) < ATTRACT_R * .8) p.vy += dy * ATTRACT * .8;
+    }
+  }
+
+  function measure(){
+    if (!samples.length) return;
+    var d = mctx.getImageData(0, 0, mask.width, mask.height).data, on = 0, step = Math.max(1, Math.floor(samples.length / 600));
+    var tot = 0;
+    for (var i = 0; i < samples.length; i += step){
+      var s = samples[i], hx = s % hitW, hy = (s / hitW) | 0;
+      var px = Math.min(mask.width - 1, Math.round((hx + .5) * HS * dpr)), py = Math.min(mask.height - 1, Math.round((hy + .5) * HS * dpr));
+      if (d[(py * mask.width + px) * 4 + 3] > 140) on++;
+      tot++;
+    }
+    coverage = on / tot;
+  }
+
+  var frame = 0, lastT = 0;
+  function tick(now){
+    rafId = 0;
+    var dt = Math.min(2.5, lastT ? (now - lastT) / 16.67 : 1); lastT = now; frame++;
+    var r = scene.getBoundingClientRect();
+    /* pointer in scene coordinates, read every frame because the page can scroll under the finger */
+    var px = ptr.cx - r.left, py = ptr.cy - r.top;
+    var userOn = ptr.active && now - ptr.last < 140 && !(g0wide && px < G.x0 - 140);
+    if (now - ptr.last > AUTO_RESUME_MS) auto.on = coverage < 0.985;
+    var emitX, emitY, evx = 0, evy = 0, rate = SPRAY_PER_FRAME * (phone ? .6 : 1);
+    if (userOn){
+      emitX = px; emitY = py; evx = ptr.vx; evy = ptr.vy;
+      ptr.vx *= .7; ptr.vy *= .7;
+      spray(emitX, emitY, evx, evy, rate * dt);
+    } else if (auto.on && now > 900){
+      auto.t += AUTO_SPEED * dt * 16.67;
+      var u = (Math.sin(auto.t * 1.0) * .5 + .5), v = (Math.sin(auto.t * 2.3 + 1.1) * .5 + .5);
+      emitX = G.x0 + u * (G.x2 - G.x0);
+      var sy = G.stairY(emitX);
+      emitY = sy - G.railH * (.15 + v * .85);
+      spray(emitX, emitY, Math.cos(auto.t * 1.0) * 2, 0, rate * .7 * dt);
+    }
+
+    /* particles */
+    mctx.fillStyle = '#000';
+    for (var i = parts.length - 1; i >= 0; i--){
+      var p = parts[i];
+      attract(p);
+      p.vx *= Math.pow(.955, dt); p.vy *= Math.pow(.955, dt); p.vy += .015 * dt;
+      p.x += p.vx * dt; p.y += p.vy * dt; p.life -= dt;
+      if (onMetal(p.x, p.y)){
+        mctx.beginPath(); mctx.arc(p.x, p.y, DEPOSIT_R * (.7 + p.r * .3), 0, 6.283); mctx.fill();
+        parts.splice(i, 1); continue;
+      }
+      if (p.life <= 0 || p.x < -20 || p.x > W + 20 || p.y < -20 || p.y > H + 20) parts.splice(i, 1);
+    }
+    if (frame % 20 === 0) measure();
+
+    /* compose: siding and steps, bare metal, then coat through the mask */
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.drawImage(bg, 0, 0);
+    ctx.drawImage(bare, 0, 0);
+    wctx.globalCompositeOperation = 'source-over'; wctx.clearRect(0, 0, work.width, work.height);
+    wctx.drawImage(coat, 0, 0);
+    wctx.globalCompositeOperation = 'destination-in'; wctx.drawImage(mask, 0, 0);
+    ctx.drawImage(work, 0, 0);
+
+    /* powder in the air */
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var t = now / 1000;
+    ctx.fillStyle = 'rgba(38,44,52,.42)';
+    for (i = 0; i < parts.length; i++){ p = parts[i]; ctx.globalAlpha = Math.min(1, p.life / 40); ctx.fillRect(p.x - p.r / 2, p.y - p.r / 2, p.r, p.r); }
+    ctx.globalAlpha = 1;
+    for (i = 0; i < motes.length; i++){
+      var m = motes[i];
+      m.x += (Math.sin(t * .6 * m.sp + m.ph) * .25 + Math.sin(t * 1.7 + m.ph * 2) * .12 + .05) * dt;
+      m.y += (Math.cos(t * .5 * m.sp + m.ph) * .18 - .04) * dt;
+      if (m.x > W + 5) m.x = (g0wide ? G.x0 - 60 : -5); if (m.y < -5) m.y = H * .8;
+      var dx = m.x + m.ox - px, dy = m.y + m.oy - py, dd = dx * dx + dy * dy;
+      if (ptr.seen && dd < 6400 && dd > 1){ var f = (1 - Math.sqrt(dd) / 80) * 1.4; m.vx += dx / Math.sqrt(dd) * f + ptr.vx * .03; m.vy += dy / Math.sqrt(dd) * f + ptr.vy * .03; }
+      m.vx += -m.ox * .02; m.vy += -m.oy * .02; m.vx *= .9; m.vy *= .9;
+      m.ox += m.vx * dt; m.oy += m.vy * dt;
+      ctx.fillStyle = 'rgba(60,68,78,' + (.18 + .14 * Math.sin(t * 2 + m.ph)) + ')';
+      ctx.beginPath(); ctx.arc(m.x + m.ox, m.y + m.oy, m.r, 0, 6.283); ctx.fill();
+    }
+    if (running) rafId = requestAnimationFrame(tick);
+  }
+
+  function start(){ if (!running && visible){ running = true; lastT = 0; rafId = requestAnimationFrame(tick); } }
+  function stop(){ running = false; if (rafId) cancelAnimationFrame(rafId); rafId = 0; }
+
+  function point(e, x, y){
+    var now = performance.now();
+    if (ptr.seen && now - ptr.last < 100){ ptr.vx = (x - ptr.cx) * .6 + ptr.vx * .4; ptr.vy = (y - ptr.cy) * .6 + ptr.vy * .4; }
+    ptr.cx = x; ptr.cy = y; ptr.last = now; ptr.seen = true; ptr.active = true; auto.on = false;
+    hint.classList.add('gone');
+  }
+  scene.addEventListener('pointerdown', function(e){ e.preventDefault(); point(e, e.clientX, e.clientY); });
+  scene.addEventListener('pointermove', function(e){ if (e.pointerType === 'mouse' || e.buttons || e.pressure > 0) point(e, e.clientX, e.clientY); });
+  scene.addEventListener('pointerleave', function(){ ptr.active = false; });
+  scene.addEventListener('touchmove', function(e){ var t = e.touches[0]; if (t) point(e, t.clientX, t.clientY); }, { passive: true });
+  scene.addEventListener('touchstart', function(e){ var t = e.touches[0]; if (t) point(e, t.clientX, t.clientY); }, { passive: true });
+  scene.addEventListener('touchend', function(){ ptr.active = false; }, { passive: true });
+
+  function init(){
+    build();
+    scene.querySelector('.scene-fallback').style.display = 'none';
+    if (REDUCED){
+      /* still frame: the left half already coated */
+      mctx.fillStyle = '#000'; mctx.fillRect(0, 0, W * .52, H);
+      hint.textContent = '';
+      running = false; tick(performance.now()); return;
+    }
+    if ('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){ visible = es[0].isIntersecting; visible ? start() : stop(); }).observe(scene);
+    }
+    start();
+  }
+  window.addEventListener('resize', function(){ if (build() && REDUCED){ mctx.fillStyle = '#000'; mctx.fillRect(0, 0, W * .52, H); tick(performance.now()); } });
+  document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : start(); });
+  init();
+  window.__coat = function(){ return { coverage: coverage, parts: parts.length, W: W, H: H }; };
+})();
+</script>
+</body>
+</html>
