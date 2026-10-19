@@ -1,0 +1,569 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-19T20:06:34+00:00",
+  "title": "Design System: New Jersey Railing Works",
+  "extensions": {
+    "colorMeta": {
+      "siding": {
+        "role": "neutral",
+        "displayName": "Vinyl Siding",
+        "canonical": "#d3dce3",
+        "tonalRamp": [
+          "oklch(15% 0.014 241.0)",
+          "oklch(26% 0.014 241.0)",
+          "oklch(38% 0.014 241.0)",
+          "oklch(50% 0.014 241.0)",
+          "oklch(62% 0.014 241.0)",
+          "oklch(74% 0.014 241.0)",
+          "oklch(85% 0.014 241.0)",
+          "oklch(95% 0.014 241.0)"
+        ]
+      },
+      "siding-deep": {
+        "role": "neutral",
+        "displayName": "Siding Shade",
+        "canonical": "#c3ced7",
+        "tonalRamp": [
+          "oklch(15% 0.017 242.5)",
+          "oklch(26% 0.017 242.5)",
+          "oklch(38% 0.017 242.5)",
+          "oklch(50% 0.017 242.5)",
+          "oklch(62% 0.017 242.5)",
+          "oklch(74% 0.017 242.5)",
+          "oklch(85% 0.017 242.5)",
+          "oklch(95% 0.017 242.5)"
+        ]
+      },
+      "light": {
+        "role": "neutral",
+        "displayName": "Morning Light",
+        "canonical": "#eef1f3",
+        "tonalRamp": [
+          "oklch(15% 0.004 236.5)",
+          "oklch(26% 0.004 236.5)",
+          "oklch(38% 0.004 236.5)",
+          "oklch(50% 0.004 236.5)",
+          "oklch(62% 0.004 236.5)",
+          "oklch(74% 0.004 236.5)",
+          "oklch(85% 0.004 236.5)",
+          "oklch(95% 0.004 236.5)"
+        ]
+      },
+      "slate": {
+        "role": "neutral",
+        "displayName": "Slate",
+        "canonical": "#1f2a35",
+        "tonalRamp": [
+          "oklch(15% 0.025 248.8)",
+          "oklch(26% 0.025 248.8)",
+          "oklch(38% 0.025 248.8)",
+          "oklch(50% 0.025 248.8)",
+          "oklch(62% 0.025 248.8)",
+          "oklch(74% 0.025 248.8)",
+          "oklch(85% 0.025 248.8)",
+          "oklch(95% 0.025 248.8)"
+        ]
+      },
+      "slate-deep": {
+        "role": "neutral",
+        "displayName": "Deep Slate",
+        "canonical": "#17202a",
+        "tonalRamp": [
+          "oklch(15% 0.023 251.4)",
+          "oklch(26% 0.023 251.4)",
+          "oklch(38% 0.023 251.4)",
+          "oklch(50% 0.023 251.4)",
+          "oklch(62% 0.023 251.4)",
+          "oklch(74% 0.023 251.4)",
+          "oklch(85% 0.023 251.4)",
+          "oklch(95% 0.023 251.4)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#141a21",
+        "tonalRamp": [
+          "oklch(15% 0.017 252.5)",
+          "oklch(26% 0.017 252.5)",
+          "oklch(38% 0.017 252.5)",
+          "oklch(50% 0.017 252.5)",
+          "oklch(62% 0.017 252.5)",
+          "oklch(74% 0.017 252.5)",
+          "oklch(85% 0.017 252.5)",
+          "oklch(95% 0.017 252.5)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Ink Soft",
+        "canonical": "#3c4855",
+        "tonalRamp": [
+          "oklch(15% 0.027 250.6)",
+          "oklch(26% 0.027 250.6)",
+          "oklch(38% 0.027 250.6)",
+          "oklch(50% 0.027 250.6)",
+          "oklch(62% 0.027 250.6)",
+          "oklch(74% 0.027 250.6)",
+          "oklch(85% 0.027 250.6)",
+          "oklch(95% 0.027 250.6)"
+        ]
+      },
+      "on-dark": {
+        "role": "neutral",
+        "displayName": "On Dark",
+        "canonical": "#eef2f5",
+        "tonalRamp": [
+          "oklch(15% 0.006 239.8)",
+          "oklch(26% 0.006 239.8)",
+          "oklch(38% 0.006 239.8)",
+          "oklch(50% 0.006 239.8)",
+          "oklch(62% 0.006 239.8)",
+          "oklch(74% 0.006 239.8)",
+          "oklch(85% 0.006 239.8)",
+          "oklch(95% 0.006 239.8)"
+        ]
+      },
+      "on-dark-soft": {
+        "role": "neutral",
+        "displayName": "On Dark Soft",
+        "canonical": "#b7c3ce",
+        "tonalRamp": [
+          "oklch(15% 0.020 245.7)",
+          "oklch(26% 0.020 245.7)",
+          "oklch(38% 0.020 245.7)",
+          "oklch(50% 0.020 245.7)",
+          "oklch(62% 0.020 245.7)",
+          "oklch(74% 0.020 245.7)",
+          "oklch(85% 0.020 245.7)",
+          "oklch(95% 0.020 245.7)"
+        ]
+      },
+      "coat": {
+        "role": "secondary",
+        "displayName": "Coat Black",
+        "canonical": "#16191d",
+        "tonalRamp": [
+          "oklch(15% 0.009 255.6)",
+          "oklch(26% 0.009 255.6)",
+          "oklch(38% 0.009 255.6)",
+          "oklch(50% 0.009 255.6)",
+          "oklch(62% 0.009 255.6)",
+          "oklch(74% 0.009 255.6)",
+          "oklch(85% 0.009 255.6)",
+          "oklch(95% 0.009 255.6)"
+        ]
+      },
+      "coat-hover": {
+        "role": "secondary",
+        "displayName": "Coat Hover",
+        "canonical": "#2a3038",
+        "tonalRamp": [
+          "oklch(15% 0.017 255.6)",
+          "oklch(26% 0.017 255.6)",
+          "oklch(38% 0.017 255.6)",
+          "oklch(50% 0.017 255.6)",
+          "oklch(62% 0.017 255.6)",
+          "oklch(74% 0.017 255.6)",
+          "oklch(85% 0.017 255.6)",
+          "oklch(95% 0.017 255.6)"
+        ]
+      },
+      "gold": {
+        "role": "primary",
+        "displayName": "Logo Gold",
+        "canonical": "#c9a24b",
+        "tonalRamp": [
+          "oklch(15% 0.115 85.0)",
+          "oklch(26% 0.115 85.0)",
+          "oklch(38% 0.115 85.0)",
+          "oklch(50% 0.115 85.0)",
+          "oklch(62% 0.115 85.0)",
+          "oklch(74% 0.115 85.0)",
+          "oklch(85% 0.115 85.0)",
+          "oklch(95% 0.115 85.0)"
+        ]
+      },
+      "gold-bright": {
+        "role": "primary",
+        "displayName": "Bright Gold",
+        "canonical": "#e0bd6a",
+        "tonalRamp": [
+          "oklch(15% 0.110 87.0)",
+          "oklch(26% 0.110 87.0)",
+          "oklch(38% 0.110 87.0)",
+          "oklch(50% 0.110 87.0)",
+          "oklch(62% 0.110 87.0)",
+          "oklch(74% 0.110 87.0)",
+          "oklch(85% 0.110 87.0)",
+          "oklch(95% 0.110 87.0)"
+        ]
+      },
+      "focus": {
+        "role": "tertiary",
+        "displayName": "Booth Blue",
+        "canonical": "#7cc0f0",
+        "tonalRamp": [
+          "oklch(15% 0.097 240.4)",
+          "oklch(26% 0.097 240.4)",
+          "oklch(38% 0.097 240.4)",
+          "oklch(50% 0.097 240.4)",
+          "oklch(62% 0.097 240.4)",
+          "oklch(74% 0.097 240.4)",
+          "oklch(85% 0.097 240.4)",
+          "oklch(95% 0.097 240.4)"
+        ]
+      },
+      "focus-deep": {
+        "role": "tertiary",
+        "displayName": "Booth Blue Deep",
+        "canonical": "#1f6fb0",
+        "tonalRamp": [
+          "oklch(15% 0.126 248.1)",
+          "oklch(26% 0.126 248.1)",
+          "oklch(38% 0.126 248.1)",
+          "oklch(50% 0.126 248.1)",
+          "oklch(62% 0.126 248.1)",
+          "oklch(74% 0.126 248.1)",
+          "oklch(85% 0.126 248.1)",
+          "oklch(95% 0.126 248.1)"
+        ]
+      },
+      "rule-light": {
+        "role": "neutral",
+        "displayName": "Light Rule",
+        "canonical": "#cdd5dc",
+        "tonalRamp": [
+          "oklch(15% 0.013 244.3)",
+          "oklch(26% 0.013 244.3)",
+          "oklch(38% 0.013 244.3)",
+          "oklch(50% 0.013 244.3)",
+          "oklch(62% 0.013 244.3)",
+          "oklch(74% 0.013 244.3)",
+          "oklch(85% 0.013 244.3)",
+          "oklch(95% 0.013 244.3)"
+        ]
+      },
+      "field-fill": {
+        "role": "neutral",
+        "displayName": "Field Slate",
+        "canonical": "#283440",
+        "tonalRamp": [
+          "oklch(15% 0.027 248.7)",
+          "oklch(26% 0.027 248.7)",
+          "oklch(38% 0.027 248.7)",
+          "oklch(50% 0.027 248.7)",
+          "oklch(62% 0.027 248.7)",
+          "oklch(74% 0.027 248.7)",
+          "oklch(85% 0.027 248.7)",
+          "oklch(95% 0.027 248.7)"
+        ]
+      },
+      "field-stroke": {
+        "role": "neutral",
+        "displayName": "Field Stroke",
+        "canonical": "#6b7a89",
+        "tonalRamp": [
+          "oklch(15% 0.029 248.3)",
+          "oklch(26% 0.029 248.3)",
+          "oklch(38% 0.029 248.3)",
+          "oklch(50% 0.029 248.3)",
+          "oklch(62% 0.029 248.3)",
+          "oklch(74% 0.029 248.3)",
+          "oklch(85% 0.029 248.3)",
+          "oklch(95% 0.029 248.3)"
+        ]
+      },
+      "mill-aluminum": {
+        "role": "neutral",
+        "displayName": "Mill Aluminum",
+        "canonical": "#a3abb2",
+        "tonalRamp": [
+          "oklch(15% 0.014 244.3)",
+          "oklch(26% 0.014 244.3)",
+          "oklch(38% 0.014 244.3)",
+          "oklch(50% 0.014 244.3)",
+          "oklch(62% 0.014 244.3)",
+          "oklch(74% 0.014 244.3)",
+          "oklch(85% 0.014 244.3)",
+          "oklch(95% 0.014 244.3)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only; uppercase 850, max 11ch, height-clamped."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "One per section; uppercase 850, balanced wrap."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Service rows and step titles; uppercase."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Hero promise and area statement, ink-soft."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text, 44-46ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, legends, field labels, phone number, footer links."
+      },
+      "fine": {
+        "displayName": "Fine",
+        "purpose": "Helper notes, scene hint, footer fine print."
+      }
+    },
+    "shadows": [
+      {
+        "name": "coat-button",
+        "value": "0 6px 16px -6px rgba(20,26,33,.55)",
+        "purpose": "Coat-black buttons on light grounds."
+      },
+      {
+        "name": "send-button",
+        "value": "0 8px 18px -8px rgba(0,0,0,.7)",
+        "purpose": "Coat-black button on slate."
+      },
+      {
+        "name": "photo-tile",
+        "value": "0 10px 24px -14px rgba(0,0,0,.7)",
+        "purpose": "Work grid photos and (near-identical) the gold panel."
+      },
+      {
+        "name": "companion-photo-light",
+        "value": "0 14px 30px -18px rgba(20,26,33,.6)",
+        "purpose": "Sticky companion photo on a light band (desktop)."
+      },
+      {
+        "name": "companion-photo-dark",
+        "value": "0 18px 36px -20px rgba(0,0,0,.8)",
+        "purpose": "Sticky companion photo on slate (desktop)."
+      },
+      {
+        "name": "badge",
+        "value": "0 3px 8px -3px rgba(0,0,0,.45)",
+        "purpose": "Round logo badge."
+      },
+      {
+        "name": "focus-ring-light",
+        "value": "outline: 3px solid #1f6fb0; outline-offset: 3px",
+        "purpose": "Keyboard focus on light grounds."
+      },
+      {
+        "name": "focus-ring-dark",
+        "value": "outline: 3px solid #7cc0f0; outline-offset: 3px",
+        "purpose": "Keyboard focus on slate and in the footer."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-color",
+        "value": "background-color .2s, color .2s",
+        "purpose": "Button, arrow and link color changes."
+      },
+      {
+        "name": "control-border",
+        "value": "border-color .15s",
+        "purpose": "Inputs and chips turning booth blue."
+      },
+      {
+        "name": "press",
+        "value": "transform .15s; translateY(1px)",
+        "purpose": "Button press."
+      },
+      {
+        "name": "coat-bar",
+        "value": "opacity .45s ease-out, delay = x/width * 1.4s",
+        "purpose": "Railing divider bars coating left to right once 80% visible."
+      },
+      {
+        "name": "hint-fade",
+        "value": "opacity .6s",
+        "purpose": "Hero scene hint leaving after first touch."
+      },
+      {
+        "name": "cure",
+        "value": "1100ms",
+        "purpose": "Hero canvas: matte powder flows out to semi-gloss after 92% coverage."
+      },
+      {
+        "name": "autopilot-resume",
+        "value": "3500ms",
+        "purpose": "Hero canvas: autopilot spray resumes after the last touch."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Dividers render coated, transitions off, scene yields scroll (touch-action: pan-y)."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "xs",
+        "value": "380px"
+      },
+      {
+        "name": "sm-cta",
+        "value": "419px"
+      },
+      {
+        "name": "md",
+        "value": "700px"
+      },
+      {
+        "name": "lg",
+        "value": "960px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Coat Button",
+      "kind": "button",
+      "refersTo": "button-coat",
+      "description": "Primary action on light grounds: coat-black fill, bright-gold label.",
+      "html": "<a class=\"ds-btn ds-btn-coat\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 5h16v11H9l-5 4z\"/></svg>Text us a photo</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:56px;padding:0 22px;border-radius:10px;font:800 1.0625rem/1.1 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;text-decoration:none;border:2px solid #16191d;cursor:pointer;transition:background-color .2s,color .2s,transform .15s,box-shadow .2s} .ds-btn:active{transform:translateY(1px)} .ds-btn:focus-visible{outline:3px solid #1f6fb0;outline-offset:3px} .ds-btn-coat{background:#16191d;color:#e0bd6a;box-shadow:0 6px 16px -6px rgba(20,26,33,.55)} .ds-btn-coat:hover{background:#2a3038}"
+    },
+    {
+      "name": "Outlined Button",
+      "kind": "button",
+      "refersTo": "button-line",
+      "description": "Secondary action beside the coat button.",
+      "html": "<a class=\"ds-btn ds-btn-line\" href=\"#\">Get an estimate</a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:56px;padding:0 22px;border-radius:10px;font:800 1.0625rem/1.1 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;text-decoration:none;border:2px solid #16191d;cursor:pointer;transition:background-color .2s,color .2s,transform .15s,box-shadow .2s} .ds-btn:active{transform:translateY(1px)} .ds-btn:focus-visible{outline:3px solid #1f6fb0;outline-offset:3px} .ds-btn-line{background:transparent;color:#16191d} .ds-btn-line:hover{background:rgba(22,25,29,.08)}"
+    },
+    {
+      "name": "Send Button (on slate)",
+      "kind": "button",
+      "refersTo": "button-coat",
+      "description": "Full-width form submit on the dark estimate band; stroke goes booth blue on hover/focus.",
+      "html": "<div style=\"background:#1f2a35;padding:20px\"><button class=\"ds-btn ds-send\" type=\"button\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M4 5h16v11H9l-5 4z\"/></svg>Text this to us</button></div>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:56px;padding:0 22px;border-radius:10px;font:800 1.0625rem/1.1 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;text-decoration:none;border:2px solid #16191d;cursor:pointer;transition:background-color .2s,color .2s,transform .15s,box-shadow .2s} .ds-btn:active{transform:translateY(1px)} .ds-btn:focus-visible{outline:3px solid #1f6fb0;outline-offset:3px} .ds-send{background:#16191d;color:#e0bd6a;border-color:#5b6672;width:100%;box-shadow:0 8px 18px -8px rgba(0,0,0,.7)} .ds-send:hover,.ds-send:focus-visible{border-color:#7cc0f0;background:#2a3038;outline:none} .ds-send:focus-visible{box-shadow:0 0 0 3px #7cc0f0}"
+    },
+    {
+      "name": "Gold Panel Link",
+      "kind": "button",
+      "refersTo": "button-gold-panel",
+      "description": "The single gold-filled link on the dark work band (Instagram).",
+      "html": "<div style=\"background:#1f2a35;padding:20px\"><a class=\"ds-more\" href=\"#\"><span>Click to see more of our work.<small>@newjerseyrailings on Instagram</small></span><svg viewBox=\"0 0 24 24\" width=\"28\" height=\"28\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" aria-hidden=\"true\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"4.2\"/><circle cx=\"17.4\" cy=\"6.6\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/></svg></a></div>",
+      "css": ".ds-more{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:64px;max-width:560px;padding:12px 18px;border-radius:10px;background:#c9a24b;color:#16191d;font:850 1.25rem/1.2 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;text-decoration:none;box-shadow:0 10px 22px -12px rgba(0,0,0,.7);transition:background-color .2s} .ds-more:hover{background:#e0bd6a} .ds-more:focus-visible{outline:3px solid #7cc0f0;outline-offset:3px} .ds-more small{display:block;font-weight:600;font-size:.875rem;opacity:.8}"
+    },
+    {
+      "name": "Choice Chips",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Pill checkboxes/radios on slate; gold when selected, blue border on hover/focus.",
+      "html": "<div class=\"ds-chips\" style=\"background:#1f2a35;padding:20px\"><label class=\"ds-chip\"><input type=\"checkbox\" checked><span>Railings</span></label><label class=\"ds-chip\"><input type=\"checkbox\"><span>Stairs</span></label><label class=\"ds-chip\"><input type=\"checkbox\"><span>Fence</span></label></div>",
+      "css": ".ds-chips{display:flex;flex-wrap:wrap;gap:8px} .ds-chip{position:relative} .ds-chip input{position:absolute;opacity:0;width:1px;height:1px;margin:0} .ds-chip span{display:inline-flex;align-items:center;min-height:48px;padding:0 16px;border-radius:999px;border:2px solid #6b7a89;background:#283440;color:#eef2f5;font:700 1.0625rem/1 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;cursor:pointer;transition:background-color .15s,border-color .15s,color .15s} .ds-chip span:hover{border-color:#7cc0f0} .ds-chip input:focus-visible+span{outline:3px solid #7cc0f0;outline-offset:2px} .ds-chip input:checked+span{background:#c9a24b;border-color:#c9a24b;color:#16191d} .ds-chip input:checked+span:hover{border-color:#7cc0f0}"
+    },
+    {
+      "name": "Text Field (on slate)",
+      "kind": "input",
+      "refersTo": "input-text",
+      "description": "Label plus field on the dark estimate band; border turns booth blue on hover and focus.",
+      "html": "<div style=\"background:#1f2a35;padding:20px\"><label class=\"ds-label\" for=\"ds-name\">Your name</label><input class=\"ds-input\" id=\"ds-name\" type=\"text\" placeholder=\"First name is fine\"></div>",
+      "css": ".ds-label{display:block;font:700 1.0625rem/1.3 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;color:#eef2f5;margin-bottom:9px} .ds-input{width:100%;box-sizing:border-box;font:500 1.0625rem/1.4 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;color:#eef2f5;background:#283440;border:2px solid #6b7a89;border-radius:10px;padding:14px;min-height:54px;transition:border-color .15s} .ds-input:hover,.ds-input:focus{border-color:#7cc0f0;outline:none} .ds-input::placeholder{color:#8e9cab}"
+    },
+    {
+      "name": "Header",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "Badge and wordmark left, phone number right, on siding; no menu.",
+      "html": "<header class=\"ds-top\"><a class=\"ds-brand\" href=\"#\"><span class=\"ds-badge\"></span><b>New Jersey<br>Railing Works</b></a><a class=\"ds-phone\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2\"/></svg>973-281-3208</a></header>",
+      "css": ".ds-top{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:68px;padding:10px 16px 6px;background:#d3dce3;font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif} .ds-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#141a21} .ds-badge{width:44px;height:44px;border-radius:50%;background:#16191d;box-shadow:inset 0 0 0 3px #c9a24b,0 3px 8px -3px rgba(0,0,0,.45)} .ds-brand b{font-weight:850;font-size:.875rem;line-height:1.08;text-transform:uppercase;letter-spacing:.01em} .ds-phone{display:inline-flex;align-items:center;gap:7px;min-height:44px;font-weight:850;font-size:1.0625rem;text-decoration:none;color:#16191d} .ds-phone svg{color:#8a6a1f} .ds-phone:hover{text-decoration:underline;text-decoration-color:#c9a24b;text-decoration-thickness:3px;text-underline-offset:5px} .ds-phone:focus-visible{outline:3px solid #1f6fb0;outline-offset:3px}"
+    },
+    {
+      "name": "Service Row",
+      "kind": "custom",
+      "refersTo": "service-row",
+      "description": "Uppercase row link on a light band; only the arrow changes on hover/focus.",
+      "html": "<ul class=\"ds-rows\"><li><a class=\"ds-row\" href=\"#\">Outdoor railings<span class=\"ds-arrow\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></a></li><li><a class=\"ds-row\" href=\"#\">Staircase makeovers<span class=\"ds-arrow\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></span></a></li></ul>",
+      "css": ".ds-rows{list-style:none;margin:0;padding:0 16px;background:#eef1f3} .ds-row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding:8px 0;border-bottom:1px solid #cdd5dc;text-decoration:none;color:#141a21;font:700 1.25rem/1.1 -apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;text-transform:uppercase;letter-spacing:.005em} .ds-row:hover,.ds-row:focus-visible{outline:none} .ds-arrow{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#dfe5ea;color:#16191d;flex:none;transition:background-color .2s,color .2s} .ds-row:hover .ds-arrow,.ds-row:focus-visible .ds-arrow{background:#16191d;color:#e0bd6a} .ds-row:focus-visible .ds-arrow{outline:3px solid #1f6fb0;outline-offset:3px}"
+    },
+    {
+      "name": "Process Step",
+      "kind": "custom",
+      "refersTo": "step-number",
+      "description": "Coat-black numbered circle with bright-gold numeral, uppercase title, short line.",
+      "html": "<ol class=\"ds-steps\"><li><div><h3>Send us a photo</h3><p>Text a picture of the stairs, porch or yard as it is now.</p></div></li><li><div><h3>We plan it with you</h3><p>Style, material and finish, picked to suit your house.</p></div></li></ol>",
+      "css": ".ds-steps{list-style:none;margin:0;padding:16px;display:grid;gap:22px;counter-reset:s;background:#eef1f3;font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif} .ds-steps li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start} .ds-steps li::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#16191d;color:#e0bd6a;font-weight:850;font-size:1.25rem} .ds-steps h3{margin:9px 0 6px;font-size:1.25rem;font-weight:850;text-transform:uppercase;line-height:1.02;color:#141a21} .ds-steps p{margin:0;color:#3c4855;font-size:1.0625rem;line-height:1.55;max-width:46ch}"
+    },
+    {
+      "name": "Railing Divider",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Railing run between bands; bars turn from mill aluminum to coat black left to right (hover the preview to replay).",
+      "html": "<svg class=\"ds-rail\" viewBox=\"0 0 600 72\" aria-hidden=\"true\"><g class=\"ds-bare\"><rect x=\"10\" y=\"10\" width=\"280\" height=\"6\" rx=\"1\"/><rect x=\"310\" y=\"10\" width=\"280\" height=\"6\" rx=\"1\"/><rect x=\"10\" y=\"58\" width=\"280\" height=\"4\" rx=\"1\"/><rect x=\"310\" y=\"58\" width=\"280\" height=\"4\" rx=\"1\"/><rect x=\"0\" y=\"6\" width=\"10\" height=\"62\"/><rect x=\"295\" y=\"6\" width=\"10\" height=\"62\"/><rect x=\"590\" y=\"6\" width=\"10\" height=\"62\"/><rect x=\"0\" y=\"68\" width=\"600\" height=\"4\"/></g><g class=\"ds-coat\"><rect x=\"10\" y=\"10\" width=\"280\" height=\"6\" rx=\"1\" style=\"transition-delay:.02s\"/><rect x=\"310\" y=\"10\" width=\"280\" height=\"6\" rx=\"1\" style=\"transition-delay:.72s\"/><rect x=\"10\" y=\"58\" width=\"280\" height=\"4\" rx=\"1\" style=\"transition-delay:.02s\"/><rect x=\"310\" y=\"58\" width=\"280\" height=\"4\" rx=\"1\" style=\"transition-delay:.72s\"/><rect x=\"0\" y=\"6\" width=\"10\" height=\"62\"/><rect x=\"295\" y=\"6\" width=\"10\" height=\"62\" style=\"transition-delay:.69s\"/><rect x=\"590\" y=\"6\" width=\"10\" height=\"62\" style=\"transition-delay:1.38s\"/><rect x=\"0\" y=\"68\" width=\"600\" height=\"4\"/></g></svg>",
+      "css": ".ds-rail{display:block;width:100%;height:72px;background:#eef1f3;padding-top:14px} .ds-bare{fill:#a3abb2} .ds-coat rect{fill:#16191d;opacity:0;transition:opacity .45s ease-out} .ds-rail:hover .ds-coat rect{opacity:1}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Powder-Coat Line",
+    "overview": "The site is the crew's finishing booth. A bare mill-aluminum railing stands on a New Jersey stoop against blue-gray vinyl siding, and the visitor sprays it semi-gloss black with a finger; further down, railing runs drawn as section dividers take their coat as they scroll into view. Everything else is built from the same three materials: siding-gray grounds, coat-black metal, and the gold of the company's logo badge, used as trim the way a nameplate sits on a finished job.\n\nDensity is phone-first and plain-spoken. Heavy uppercase headings in the device's own system sans carry the voice; body copy is large (17px) and short. The crew's own photos are the evidence and get the darkest, quietest band on the page. Light siding bands and dark slate bands alternate, and the page never goes black: black is reserved for the metal itself.\n\nConfirmed rejections, from the direction contract: no stock-photo hero, no stat row, no icon-card grid. No sticky bars of any kind.",
+    "keyCharacteristics": [
+      "Three materials: siding gray (ground), coat black (metal, buttons, numbers), logo gold (trim).",
+      "Alternating light siding/light bands and dark slate bands; never a black page ground.",
+      "Heavy (850) uppercase system sans for every heading; no webfont.",
+      "Large touch targets: 56px buttons, 64px rows, 48px chips, 44px minimum links.",
+      "Signature motion is the coating itself: the hero spray canvas and the self-coating railing dividers."
+    ],
+    "rules": [
+      {
+        "name": "The Never-Black Ground Rule",
+        "body": "No page, band or section ground is black. Grounds are siding (#d3dce3), light (#eef1f3) or slate (#1f2a35 / #17202a). Black (coat) is a material: buttons, numbers, metal.",
+        "section": "colors"
+      },
+      {
+        "name": "The Gold Is Trim Rule",
+        "body": "Gold appears on black (as label color) or as a small fill on a slate band (selected chip, the Instagram panel). It never fills a band, a heading, or a large area on a light ground.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Accents, Two Jobs Rule",
+        "body": "Gold means \"the brand / selected\". Booth blue means \"you are touching a form control\". Never swap them: gold is not a focus color and blue is not a fill.",
+        "section": "colors"
+      },
+      {
+        "name": "The Stamped Heading Rule",
+        "body": "Every h1-h3 is uppercase at weight 850 (titles may drop to 700). No sentence-case headings, no light display weights.",
+        "section": "typography"
+      },
+      {
+        "name": "The Three-Step Text Rule",
+        "body": "Text below headings uses only three sizes: 14px, 17px, 20px. Hierarchy under the headlines comes from weight and color, not more sizes; nothing smaller than 14px.",
+        "section": "typography"
+      },
+      {
+        "name": "The Objects Cast, Bands Don't Rule",
+        "body": "Shadows belong to things you could pick up (buttons, photos, the badge). Grounds are separated by color change and railing dividers, never by shadow or border.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do alternate siding/light bands with slate bands, and keep every ground one of siding, light, slate or deep slate.",
+      "Do put gold on black: coat-black buttons and circles carry bright-gold labels.",
+      "Do outline form controls in booth blue (#7cc0f0) on hover and focus, and use the deep blue (#1f6fb0) focus ring on light grounds.",
+      "Do set every heading uppercase at weight 850 in the system sans stack.",
+      "Do keep touch targets at 44px or more (56px buttons, 64px rows, 48px chips).",
+      "Do use the coating as the motion language: things go from bare aluminum to coat black; respect reduced motion by showing the finished state.",
+      "Do let the crew's photos carry the dark work band, 8px corners, soft drop shadow."
+    ],
+    "donts": [
+      "Don't use black (#000 or coat) as a page or band ground.",
+      "Don't fill large areas or light-ground elements with gold, and don't use gold as a focus or hover-outline color.",
+      "Don't add a webfont; the system stack is the house rule.",
+      "Don't add sticky or fixed bars (call bars, nav bars, cookie bars).",
+      "Don't repeat the phone number in a fixed position; it sits top-right on the first screen and in body/footer contact lines only. Keep the email in the footer.",
+      "Don't add hover backgrounds, shadows or outlines to whole service rows; only the arrow changes.",
+      "Don't use stock imagery, stat rows or icon-card grids."
+    ]
+  }
+}
