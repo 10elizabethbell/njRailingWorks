@@ -17,6 +17,21 @@
   - The form composes a text, with a copy fallback.
   - Email is in the footer only. The Instagram button sits right under the photos, and Instagram is in the footer too.
 
+## Impeccable sweep
+- **Modes run** (all except `live`, plus `onboard`, which has no first-run flow): critique, audit, harden, optimize, adapt, clarify, polish, layout, typeset, colorize, bolder, quieter, distill, animate, delight, overdrive, then the finish reviewer.
+- **Fixes applied:**
+  - Hero: real stone stair; handrail shading that follows the slope; a visible powder gun with its hose; matte powder that cures to semi-gloss.
+  - Gallery: masonry, so every photo keeps its own shape.
+  - Railing dividers: a second one added; both rebuilt as real railings that coat bar by bar.
+  - Desktop: photos fill the empty columns beside the services list and the form.
+  - Accessibility: focus rings on the dark bands, stronger form field borders, form errors announced to screen readers.
+  - Phones: reduced-motion scene no longer blocks scrolling; landscape sizing; header tidy at 360px.
+  - Copy: hours removed from the footer; unverified "price before work starts" claim cut.
+  - The finish reviewer scored the last fix round **ship**.
+- **Detector findings left as decisions:**
+  - The Roboto flag (the system-font house rule) and the hero "cramped padding" flag (the hero is full-bleed on purpose) are suppressed in `.impeccable/config.json`.
+  - The type-ratio warning (14/17/20px under 40–90px headings) is suppressed too, rather than dropping helper text to 13px.
+
 ## Assumptions I made
 - **Texting:** the brief said "accepts texts: unknown", but their Instagram captions say "📞 Call or text: 973-281-3208", so texting is the main channel.
 - **Email:** njrailingworks@gmail.com comes from those same captions (the brief found none). It is in the footer only.
@@ -31,7 +46,7 @@
 
 ## Placeholders and gaps
 - **Logo:** I only have the 100px Instagram profile picture, which looks soft in the header and footer. The favicon is a redrawn SVG of the mark (gold railing + NJRW on black).
-- **Photos:** 10 of their 28 Instagram photos are used (9 in the gallery, 1 in the desktop services column).
+- **Photos:** 11 of their 28 Instagram photos are used (9 in the gallery, plus one each beside the services list and the form on desktop).
   - work-01 had house number "31" painted out.
   - IG photos 01, 06, 07 and 08 were skipped because they show house numbers.
   - None show fences or gates on their own, even though both are listed services.
