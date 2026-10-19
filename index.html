@@ -44,6 +44,7 @@ img{display:block;max-width:100%}
 a{color:inherit}
 ::selection{background:var(--gold);color:var(--coat)}
 :focus-visible{outline:3px solid var(--focus-dark);outline-offset:3px}
+.on-dark :focus-visible,footer :focus-visible{outline-color:var(--focus)}
 .wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 16px}
 h1,h2,h3{font-weight:850;text-transform:uppercase;letter-spacing:-.01em;line-height:1.02;margin:0;text-wrap:balance}
 h2{font-size:clamp(2rem,8vw,3.4rem)}
@@ -67,7 +68,8 @@ p{margin:0}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
 .brand img{width:44px;height:44px;border-radius:50%;flex:none;box-shadow:0 3px 8px -3px rgba(0,0,0,.45)}
 .brand b{font-weight:850;font-size:.875rem;line-height:1.08;text-transform:uppercase;letter-spacing:.01em}
-.brand b span{display:block}
+.brand b span{display:block;white-space:nowrap}
+@media (max-width:380px){.brand b{font-size:.8125rem}.brand{gap:8px}.phone{gap:5px}}
 .phone{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 4px;font-weight:850;font-size:1.0625rem;text-decoration:none;white-space:nowrap;color:var(--coat)}
 .phone svg{width:18px;height:18px;color:#8a6a1f}
 .phone:hover{text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:3px;text-underline-offset:5px}
@@ -76,32 +78,31 @@ p{margin:0}
 .hero{position:relative;background:var(--siding)}
 .hero .wrap{display:grid;grid-template-columns:1fr}
 .hero-copy{padding:18px 0 8px;position:relative;z-index:2}
-.hero h1{font-size:clamp(2.55rem,12.4vw,5.6rem);max-width:11ch}
+.hero h1{font-size:clamp(2.55rem,min(12.4vw,14svh),5.6rem);max-width:11ch}
 .promise{margin-top:14px;font-size:clamp(1.0625rem,4.6vw,1.25rem);line-height:1.45;color:var(--ink-2);max-width:34ch}
 .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
 .cta .btn{flex:1 1 140px;padding:0 10px;white-space:nowrap}
 @media (max-width:419px){.cta .btn svg{display:none}}
-.scene{position:relative;height:clamp(300px,46svh,440px);margin:0 -16px;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.scene{position:relative;height:360px;height:clamp(290px,44svh,430px);cursor:crosshair;margin:0 -16px;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
 .scene canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+@media (orientation:landscape) and (max-height:500px){.scene{height:min(300px,60svh)}}
 .scene-fallback{position:absolute;inset:0;background:linear-gradient(var(--siding),var(--siding-2))}
 .scene-hint{position:absolute;left:16px;top:10px;font-size:.875rem;font-weight:700;color:var(--ink-2);pointer-events:none;transition:opacity .6s}
 .scene-hint.gone{opacity:0}
 
 /* ---------- railing divider ---------- */
-.rail-div{display:block;width:100%;height:46px;overflow:visible;padding-top:14px;box-sizing:content-box}
+.rail-div{display:block;width:100%;height:56px;overflow:visible;padding-top:14px;box-sizing:content-box}
 .rail-div .bare{fill:#a3abb2}
-.rail-div .coat{fill:var(--coat);clip-path:inset(0 100% 0 0);transition:clip-path 1.8s cubic-bezier(.22,1,.36,1)}
-.rail-div.on .coat{clip-path:inset(0 0 0 0)}
-.on-dark .rail-div .bare{fill:#5d6975}
-.on-dark .rail-div .coat{fill:#0f1317}
+.rail-div .coat rect{fill:var(--coat);opacity:0;transition:opacity .45s ease-out}
+.rail-div.on .coat rect{opacity:1}
 
 /* ---------- work ---------- */
 .work{background:var(--slate);color:var(--on-dark);padding:56px 0 64px}
 .work h2{margin-bottom:22px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.grid figure{margin:0;border-radius:8px;overflow:hidden;background:#2a3642;aspect-ratio:3/4;box-shadow:0 10px 24px -14px rgba(0,0,0,.7)}
-.grid figure:first-child{grid-column:1/-1}
-.grid img{width:100%;height:100%;object-fit:cover}
+.grid{columns:2;column-gap:8px}
+.grid figure{margin:0 0 8px;break-inside:avoid;border-radius:8px;overflow:hidden;background:#2a3642;box-shadow:0 10px 24px -14px rgba(0,0,0,.7)}
+.grid figure:first-child{column-span:all}
+.grid img{width:100%;height:auto}
 .more{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:22px;min-height:64px;padding:12px 18px;border-radius:var(--radius);
   background:var(--gold);color:var(--coat);font-weight:850;font-size:1.25rem;text-decoration:none;box-shadow:0 10px 22px -12px rgba(0,0,0,.7);transition:background-color .2s}
 .more:hover{background:var(--gold-2)}
@@ -112,19 +113,20 @@ p{margin:0}
 .services{background:var(--light);padding:52px 0 56px}
 .services h2{margin-bottom:14px}
 .rows{list-style:none;margin:0;padding:0}
-.row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding:8px 0;border-bottom:1px solid #cdd5dc;text-decoration:none;font-weight:800;font-size:1.25rem;text-transform:uppercase;letter-spacing:.005em}
+.row{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding:8px 0;border-bottom:1px solid #cdd5dc;text-decoration:none;font-weight:700;font-size:1.25rem;text-transform:uppercase;letter-spacing:.005em}
 .row:hover,.row:focus-visible{outline:none;background:none;box-shadow:none}
 .arrow{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#dfe5ea;color:var(--coat);flex:none;transition:background-color .2s,color .2s}
 .arrow svg{width:20px;height:20px}
 .row:hover .arrow,.row:focus-visible .arrow{background:var(--coat);color:var(--gold-2)}
 .row:focus-visible .arrow{outline:3px solid var(--focus-dark);outline-offset:3px}
 .materials{margin-top:16px;color:var(--ink-2)}
+.svc-photo{display:none}
 
 /* ---------- how ---------- */
 .how{background:var(--light);padding:8px 0 60px}
 .how h2{margin-bottom:22px}
 .steps{list-style:none;margin:0;padding:0;display:grid;gap:22px;counter-reset:s}
-.steps li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start}
+.steps li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;align-content:start}
 .steps li::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--coat);color:var(--gold-2);font-weight:850;font-size:1.25rem}
 .steps h3{font-size:1.25rem;margin:9px 0 6px}
 .steps p{color:var(--ink-2);max-width:46ch}
@@ -135,17 +137,17 @@ p{margin:0}
 .estimate .lede{color:var(--on-dark-2);max-width:44ch;margin-bottom:24px}
 form{display:grid;gap:20px;max-width:640px}
 fieldset{border:0;margin:0;padding:0;min-width:0}
-legend,label.l{display:block;font-weight:800;margin-bottom:9px;font-size:1.0625rem}
+legend,label.l{display:block;font-weight:700;margin-bottom:9px;font-size:1.0625rem}
 legend small,label.l small{font-weight:500;color:var(--on-dark-2)}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{position:relative}
 .chip input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
-.chip span{display:inline-flex;align-items:center;min-height:48px;padding:0 16px;border-radius:999px;border:2px solid #4b5866;background:#283440;font-weight:700;cursor:pointer;transition:background-color .15s,border-color .15s,color .15s}
+.chip span{display:inline-flex;align-items:center;min-height:48px;padding:0 16px;border-radius:999px;border:2px solid #6b7a89;background:#283440;font-weight:700;cursor:pointer;transition:background-color .15s,border-color .15s,color .15s}
 .chip span:hover{border-color:var(--focus)}
 .chip input:focus-visible+span{outline:3px solid var(--focus);outline-offset:2px}
 .chip input:checked+span{background:var(--gold);border-color:var(--gold);color:var(--coat)}
 .chip input:checked+span:hover{border-color:var(--focus)}
-input[type=text],textarea{width:100%;font:500 1.0625rem/1.4 var(--font);color:var(--on-dark);background:#283440;border:2px solid #4b5866;border-radius:var(--radius);padding:14px;min-height:54px;transition:border-color .15s}
+input[type=text],textarea{width:100%;font:500 1.0625rem/1.4 var(--font);color:var(--on-dark);background:#283440;border:2px solid #6b7a89;border-radius:var(--radius);padding:14px;min-height:54px;transition:border-color .15s}
 textarea{min-height:110px;resize:vertical}
 input[type=text]:hover,textarea:hover,input[type=text]:focus,textarea:focus{border-color:var(--focus);outline:none}
 input::placeholder,textarea::placeholder{color:#8e9cab}
@@ -176,7 +178,7 @@ input::placeholder,textarea::placeholder{color:#8e9cab}
 footer{background:var(--slate-2);color:var(--on-dark);padding:44px 0 calc(40px + env(safe-area-inset-bottom))}
 .foot{display:grid;gap:22px}
 .foot .brand img{width:56px;height:56px}
-.foot .brand b{font-size:1rem}
+.foot .brand b{font-size:1.0625rem}
 .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
 .foot a{display:inline-flex;align-items:center;gap:10px;min-height:44px;text-decoration:none;font-weight:700}
 .foot a:hover{color:var(--gold-2)}
@@ -185,8 +187,9 @@ footer{background:var(--slate-2);color:var(--on-dark);padding:44px 0 calc(40px +
 
 /* ---------- larger screens ---------- */
 @media (min-width:700px){
-  .grid{grid-template-columns:repeat(3,1fr);gap:12px}
-  .grid figure:first-child{grid-column:auto}
+  .grid{columns:3;column-gap:12px}
+  .grid figure{margin-bottom:12px}
+  .grid figure:first-child{column-span:none}
   .steps{grid-template-columns:repeat(3,1fr);gap:28px}
   .steps li{grid-template-columns:1fr}
   .more{max-width:560px}
@@ -195,7 +198,7 @@ footer{background:var(--slate-2);color:var(--on-dark);padding:44px 0 calc(40px +
 }
 @media (min-width:960px){
   .top .wrap{min-height:84px}
-  .brand b{font-size:1rem}
+  .brand b{font-size:1.0625rem}
   .brand b span{display:inline}
   .phone{font-size:1.25rem}
   .wrap{padding:0 32px}
@@ -205,14 +208,18 @@ footer{background:var(--slate-2);color:var(--on-dark);padding:44px 0 calc(40px +
   .hero-copy a{pointer-events:auto}
   .cta .btn{flex:0 0 auto;padding:0 26px}
   .scene{position:absolute;inset:0;height:auto;margin:0}
-  .scene-hint{left:auto;right:32px;top:14px}
+  .scene-hint{max-width:150px;text-align:right}
   .services .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+  .services .wrap>div{position:sticky;top:24px}
+  .svc-photo{display:block;margin:28px 0 0;border-radius:8px;overflow:hidden;max-width:360px;box-shadow:0 14px 30px -18px rgba(20,26,33,.6)}
+  .svc-photo img{width:100%;height:auto}
   .work,.estimate{padding:80px 0 88px}
   .services,.area{padding:72px 0}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .rail-div .coat{transition:none;clip-path:none}
+  .rail-div .coat rect{transition:none;opacity:1}
+  .scene{touch-action:pan-y;cursor:auto}
   .btn,.arrow,.chip span{transition:none}
 }
 </style>
@@ -241,7 +248,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="wrap">
     <div class="hero-copy">
       <h1>Railings you’ll be proud of.</h1>
-      <p class="promise">Built to last through every New Jersey winter, and handled start to finish, from tearing out the old one to the last coat of finish.</p>
+      <p class="promise">We treat your home like our own, from tearing out the old railing to the last coat of finish.</p>
       <div class="cta">
         <a class="btn btn-coat" id="textPhoto" href="sms:+19732813208?&body=Hi%20New%20Jersey%20Railing%20Works!%20I'm%20planning%20a%20project.%20Here's%20a%20photo%20of%20what%20I%20have%20now%3A"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Text us a photo</a>
         <a class="btn btn-line" href="#estimate">Get an estimate</a>
@@ -276,21 +283,22 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   </div>
 </section>
 
-<svg class="rail-div" data-rail viewBox="0 0 1200 46" preserveAspectRatio="none" aria-hidden="true" style="background:var(--light)"></svg>
+<svg class="rail-div" data-rail viewBox="0 0 1200 56" preserveAspectRatio="none" aria-hidden="true" style="background:var(--light)"></svg>
 
 <section class="services" aria-labelledby="svc-h">
   <div class="wrap">
     <div>
       <h2 id="svc-h">What we build</h2>
-      <p class="materials">In aluminum, iron, wood and vinyl, inside and out. Tap one to text us about it.</p>
+      <p class="materials">In aluminum, iron, wood and vinyl, inside and out.</p>
+      <figure class="svc-photo"><img src="img/work-10.webp" width="720" height="960" loading="lazy" decoding="async" alt="Black horizontal railing along an upstairs landing"></figure>
     </div>
     <ul class="rows" id="rows">
-      <li><a class="row" data-svc="outdoor railings">Outdoor railings<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-      <li><a class="row" data-svc="indoor railings">Indoor railings<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-      <li><a class="row" data-svc="a staircase makeover">Staircase makeovers<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-      <li><a class="row" data-svc="a fence">Fences<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-      <li><a class="row" data-svc="a custom gate">Custom gates<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
-      <li><a class="row" data-svc="a repair">Repairs<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li><a class="row" href="sms:+19732813208" data-svc="outdoor railings">Outdoor railings<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li><a class="row" href="sms:+19732813208" data-svc="indoor railings">Indoor railings<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li><a class="row" href="sms:+19732813208" data-svc="a staircase makeover">Staircase makeovers<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li><a class="row" href="sms:+19732813208" data-svc="a fence">Fences<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li><a class="row" href="sms:+19732813208" data-svc="a custom gate">Custom gates<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+      <li><a class="row" href="sms:+19732813208" data-svc="a repair">Repairs<span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
     </ul>
   </div>
 </section>
@@ -300,18 +308,20 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <h2 id="how-h">How it works</h2>
     <ol class="steps">
       <li><div><h3>Send us a photo</h3><p>Text a picture of the stairs, porch or yard as it is now, or give us a call.</p></div></li>
-      <li><div><h3>We plan it with you</h3><p>Style, material and finish, picked to suit your house, and a price before any work starts.</p></div></li>
+      <li><div><h3>We plan it with you</h3><p>Style, material and finish, picked to suit your house.</p></div></li>
       <li><div><h3>We build and finish it</h3><p>Demo, install, stain and finish. We handle every step ourselves, so you deal with one crew the whole way.</p></div></li>
     </ol>
   </div>
 </section>
+
+<svg class="rail-div" data-rail viewBox="0 0 1200 56" preserveAspectRatio="none" aria-hidden="true" style="background:var(--light)"></svg>
 
 <section class="estimate on-dark" id="estimate" aria-labelledby="est-h">
   <div class="wrap">
     <h2 id="est-h">Tell us about your project</h2>
     <p class="lede">Pick what you need and we’ll put it into a text for you. Add photos before you send it.</p>
     <form id="est" novalidate>
-      <fieldset>
+      <fieldset aria-describedby="needErr">
         <legend>What do you need?</legend>
         <div class="chips" id="need">
           <label class="chip"><input type="checkbox" name="need" value="Railings"><span>Railings</span></label>
@@ -332,7 +342,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       </fieldset>
       <div>
         <label class="l" for="name">Your name</label>
-        <input type="text" id="name" name="name" autocomplete="name" placeholder="First name is fine">
+        <input type="text" id="name" name="name" autocomplete="name" aria-describedby="nameErr" placeholder="First name is fine">
         <p class="err" id="nameErr" aria-live="polite"></p>
       </div>
       <div>
@@ -341,12 +351,12 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       </div>
       <div>
         <label class="l" for="notes">Anything else? <small>(optional)</small></label>
-        <textarea id="notes" name="notes" placeholder="Number of steps, the style you like, when you’d like it done"></textarea>
+        <textarea id="notes" name="notes" maxlength="600" placeholder="Number of steps, the style you like, when you’d like it done"></textarea>
       </div>
       <button class="btn send" type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Text this to us</button>
       <p class="note">Opens your texting app with your message filled in. Nothing is sent until you press send.</p>
       <div class="fallback" id="fallback" aria-live="polite">
-        <strong>Here’s your message:</strong>
+        <strong>Texting app didn’t open? Here’s your message:</strong>
         <pre id="msg"></pre>
         <button class="btn" type="button" id="copy">Copy message</button>
         <p class="note" style="margin-top:12px">Text it to <a href="sms:+19732813208">973-281-3208</a>, or call us at the same number.</p>
@@ -359,7 +369,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <div class="wrap area-grid">
     <div>
       <h2 id="area-h">All of New Jersey</h2>
-      <p>We work all over the state, from our home base in Pompton Lakes.</p>
+      <p>Based in Pompton Lakes. Reach us at <a href="tel:+19732813208">973-281-3208</a> during these hours.</p>
     </div>
     <table class="hours">
       <caption class="sr">Hours</caption>
@@ -379,9 +389,9 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <ul>
       <li><a href="tel:+19732813208"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></svg>973-281-3208</a></li>
       <li><a href="mailto:njrailingworks@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>njrailingworks@gmail.com</a></li>
-      <li><a href="https://www.instagram.com/newjerseyrailings/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/></svg>@newjerseyrailings</a></li>
+      <li><a href="https://www.instagram.com/newjerseyrailings/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>@newjerseyrailings</a></li>
     </ul>
-    <p class="fine">Mon–Fri 9 am – 6 pm<br>Sat 10 am – 3 pm<br><br>© 2026 New Jersey Railing Works LLC</p>
+    <p class="fine">© 2026 New Jersey Railing Works LLC</p>
   </div>
 </footer>
 
@@ -419,6 +429,7 @@ function sms(body){ return 'sms:' + PHONE + '?&body=' + encodeURIComponent(body)
     var m = compose(), ok = true;
     needErr.textContent = m.need.length ? '' : 'Pick at least one so we know what you need.';
     nameErr.textContent = m.name ? '' : 'Add your name so we know who’s texting.';
+    f.name.setAttribute('aria-invalid', m.name ? 'false' : 'true');
     if (!m.need.length){ ok = false; f.querySelector('input[name=need]').focus(); }
     else if (!m.name){ ok = false; f.name.focus(); }
     if (!ok) return;
@@ -433,35 +444,41 @@ function sms(body){ return 'sms:' + PHONE + '?&body=' + encodeURIComponent(body)
   });
 })();
 
-/* ===== railing dividers: coat themselves when scrolled into view ===== */
+/* ===== railing dividers: each bar takes its coat as an unseen gun passes along ===== */
 (function(){
-  var H = 46, GAP = 22, B = 4, W = 1200;
-  function bars(){
-    var s = '<rect x="0" y="4" width="' + W + '" height="7" rx="2"/><rect x="0" y="36" width="' + W + '" height="5" rx="1"/>';
-    var posts = Math.max(2, Math.round(W / 260)), span = (W - 10) / posts;
-    for (var i = 0; i <= posts; i++) s += '<rect x="' + Math.round(i * span) + '" y="0" width="10" height="44" rx="1"/>';
-    for (var x = 14; x < W - 8; x += GAP){ var nearPost = (x % span) < 14 || (span - x % span) < 8; if (!nearPost) s += '<rect x="' + x + '" y="9" width="' + B + '" height="29"/>'; }
-    return s;
+  var H = 56, GAP = 34, B = 4, PASS_S = 1.4;
+  function bars(W, coat){
+    var out = '', posts = Math.max(2, Math.round(W / 300)), span = (W - 10) / posts;
+    function r(x, y, w, h){ out += '<rect x="' + Math.round(x) + '" y="' + y + '" width="' + Math.round(w) + '" height="' + h + '" rx="1"' + (coat ? ' style="transition-delay:' + (x / W * PASS_S).toFixed(2) + 's"' : '') + '/>'; }
+    for (var i = 0; i < posts; i++){
+      var px = i * span;
+      r(px + 10, 12, span - 10, 6);                       /* top rail, one segment per span */
+      r(px + 10, 42, span - 10, 4);                       /* bottom rail */
+      for (var x = px + 10 + GAP * .55; x < px + span - 8; x += GAP) r(x, 17, B, 26);
+    }
+    for (i = 0; i <= posts; i++){ r(Math.min(i * span, W - 10), 6, 10, 46); r(Math.min(i * span, W - 10) - 2, 2, 14, 5); }   /* posts with caps */
+    r(0, 52, W, 3);                                         /* deck line */
+    return out;
   }
   var els = document.querySelectorAll('[data-rail]');
   function draw(){
     els.forEach(function(svg){
-      W = Math.max(320, Math.round(svg.getBoundingClientRect().width));
+      var W = Math.max(320, Math.round(svg.getBoundingClientRect().width));
       if (svg._w === W) return; svg._w = W;
       svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
-      svg.innerHTML = '<g class="bare">' + bars() + '</g><g class="coat">' + bars() + '</g>';
+      svg.innerHTML = '<g class="bare">' + bars(W, false) + '</g><g class="coat">' + bars(W, true) + '</g>';
     });
   }
   draw(); window.addEventListener('resize', draw);
   if (REDUCED || !('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('on'); }); return; }
-  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } }); }, { threshold: .6 });
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } }); }, { threshold: .8 });
   els.forEach(function(e){ io.observe(e); });
 })();
 
 /* ===== hero: spray the bare railing with powder coat ===== */
 (function(){
   /* tunables */
-  var DPR_CAP = 1.5;
+  var DPR_CAP = phoneQ() ? 2 : 1.5;
   var SPRAY_PER_FRAME = 22;      /* particles per frame while spraying (phones get 60%) */
   var MAX_PARTICLES = 1600;
   var ATTRACT_R = 30;            /* px: powder pulled toward metal within this distance (electrostatic wrap) */
@@ -469,39 +486,41 @@ function sms(body){ return 'sms:' + PHONE + '?&body=' + encodeURIComponent(body)
   var DEPOSIT_R = 7;             /* px radius of coat each grain lays down */
   var AUTO_SPEED = 0.00042;      /* autopilot sweep speed */
   var AUTO_RESUME_MS = 3500;     /* autopilot returns this long after the last touch */
-  var MOTES = 46;                /* loose powder drifting in the air */
+  var DONE_AT = 0.97;            /* coverage that counts as fully coated */
+  var CURE_MS = 1100;            /* matte powder flows out to semi-gloss over this long */
+  var OVERSPRAY = 0.1;           /* share of grains that float off as overspray */
 
+  function phoneQ(){ return window.matchMedia('(max-width: 700px)').matches; }
   var scene = document.getElementById('scene'), cv = document.getElementById('coat'), hint = document.getElementById('hint');
   var ctx = cv.getContext('2d');
-  var phone = window.matchMedia('(max-width: 700px)').matches;
-  var W = 0, H = 0, dpr = 1;
-  var bg, bare, coat, mask, mctx, work, wctx, hit, hitW, hitH, HS = 3, samples = null;
+  var phone = phoneQ();
+  var W = 0, H = 0, dpr = 1, G = null, wide = false;
+  var bg, powder, cured, mask, mctx, work, wctx, hit, hitW, hitH, HS = 3, covered, hitCount = 0, covCount = 0;
   var balusters = [], rails = [];
-  var parts = [], motes = [];
-  var ptr = { x: 0, y: 0, cx: 0, cy: 0, vx: 0, vy: 0, active: false, last: 0, seen: false };
+  var parts = [];
+  var ptr = { cx: 0, cy: 0, vx: 0, vy: 0, active: false, last: -1e9, seen: false, touch: false };
   var auto = { t: 0, on: true }, coverage = 0, running = false, visible = true, rafId = 0;
+  var gun = { x: 0, y: 0, a: 0, ang: -0.6, placed: false }, cure = { start: 0, t: 0 };
 
   function mk(w, h){ var c = document.createElement('canvas'); c.width = w; c.height = h; return c; }
+  function rng(seed){ return function(){ seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }; }
 
   /* geometry, in CSS px */
   function layout(){
     rails = []; balusters = [];
     var desk = W > 600;
-    var groundY = H * (desk ? 0.9 : 0.93);
-    var wide = W >= 900;
-    var x0 = W * (wide ? 0.52 : desk ? 0.1 : 0.07), x1 = W * (wide ? 0.8 : desk ? 0.66 : 0.64), x2 = W * (wide ? 0.95 : desk ? 0.94 : 0.9);
+    wide = W >= 900;
+    var groundY = H * (desk ? 0.9 : 0.95);
+    var x0 = W * (wide ? 0.52 : desk ? 0.1 : 0.08), x1 = W * (wide ? 0.8 : desk ? 0.66 : 0.64), x2 = W * (wide ? 0.95 : desk ? 0.94 : 0.9);
     var rise = H * (wide ? 0.38 : desk ? 0.4 : 0.36);
-    g0wide = wide;
     var topY = groundY - rise;
-    var railH = Math.max(86, H * 0.3);
+    var railH = desk ? Math.max(86, H * 0.3) : Math.max(80, H * 0.33);
     var b = Math.max(5, Math.min(9, W * 0.011));   /* 3/4" baluster */
     var post = b * 2.7;                             /* 2" post */
     var gap = b * 5.2;
-    var steps = 5;
-    var g = { groundY: groundY, x0: x0, x1: x1, x2: x2, topY: topY, railH: railH, b: b, post: post, steps: steps };
+    var g = { groundY: groundY, x0: x0, x1: x1, x2: x2, topY: topY, rise: rise, railH: railH, b: b, post: post, steps: 5 };
     /* stair line: y at x along the slope, landing flat after x1 */
     g.stairY = function(x){ if (x >= x1) return topY; if (x <= x0) return groundY; return groundY - (x - x0) / (x1 - x0) * rise; };
-    /* handrail and bottom rail as polylines */
     var hr = railH, br = b * 2.4;
     rails.push({ pts: [[x0, groundY - hr], [x1, topY - hr], [x2, topY - hr]], th: b * 1.6 });
     rails.push({ pts: [[x0, groundY - br], [x1, topY - br], [x2, topY - br]], th: b * 1.1 });
@@ -511,13 +530,14 @@ function sms(body){ return 'sms:' + PHONE + '?&body=' + encodeURIComponent(body)
       balusters.push({ x: x, w: b, top: sy - hr, bot: sy - br });
     }
     g.posts = [x0, x1, x2].map(function(px){ var sy = g.stairY(px); return { x: px - post / 2, w: post, top: sy - hr - b * 1.4, bot: sy + 2 }; });
+    g.caps = g.posts.map(function(p){ return { x: p.x - 2, w: p.w + 4, top: p.top - b * 1.1, bot: p.top + 1 }; });
     return g;
   }
 
   function railPath(c, g){
     c.beginPath();
     balusters.forEach(function(k){ c.rect(k.x - k.w / 2, k.top, k.w, k.bot - k.top); });
-    g.posts.forEach(function(p){ c.rect(p.x, p.top, p.w, p.bot - p.top); });
+    g.posts.concat(g.caps).forEach(function(p){ c.rect(p.x, p.top, p.w, p.bot - p.top); });
     rails.forEach(function(r){
       var t = r.th / 2, p = r.pts;
       c.moveTo(p[0][0], p[0][1] - t); c.lineTo(p[1][0], p[1][1] - t); c.lineTo(p[2][0], p[2][1] - t);
@@ -525,12 +545,12 @@ function sms(body){ return 'sms:' + PHONE + '?&body=' + encodeURIComponent(body)
     });
   }
 
-  /* metal with body: broad side shading per bar, no hairline glints */
-  function paintMetal(c, g, base, lit, shade){
+  /* metal with body: broad side shading per bar, no hairline glints; grain > 0 gives the matte powder its texture */
+  function paintMetal(c, g, base, lit, shade, grain){
     c.save(); railPath(c, g); c.clip();
     c.fillStyle = base; c.fillRect(0, 0, W, H);
-    balusters.concat(g.posts).forEach(function(k){
-      var x = k.x - (k.w === g.b ? k.w / 2 : 0), w = k.w;
+    balusters.concat(g.posts, g.caps).forEach(function(k){
+      var x = k.w === g.b ? k.x - k.w / 2 : k.x, w = k.w;
       var gr = c.createLinearGradient(x, 0, x + w, 0);
       gr.addColorStop(0, shade); gr.addColorStop(.32, lit); gr.addColorStop(.6, base); gr.addColorStop(1, shade);
       c.fillStyle = gr; c.fillRect(x, k.top - 2, w, k.bot - k.top + 4);
@@ -539,14 +559,23 @@ function sms(body){ return 'sms:' + PHONE + '?&body=' + encodeURIComponent(body)
       var p = r.pts, t = r.th / 2;
       for (var i = 0; i < 2; i++){
         var ax = p[i][0], ay = p[i][1], bx = p[i + 1][0], by = p[i + 1][1];
-        var gr = c.createLinearGradient(0, Math.min(ay, by) - t, 0, Math.min(ay, by) + t);
-        gr.addColorStop(0, lit); gr.addColorStop(.55, base); gr.addColorStop(1, shade);
+        var len = Math.hypot(bx - ax, by - ay), nx = -(by - ay) / len, ny = (bx - ax) / len;
+        if (ny < 0){ nx = -nx; ny = -ny; }   /* normal points down the screen */
+        var mx = (ax + bx) / 2, my = (ay + by) / 2, tt = t / Math.max(.3, ny);
+        var gr = c.createLinearGradient(mx - nx * tt, my - ny * tt, mx + nx * tt, my + ny * tt);
+        gr.addColorStop(0, lit); gr.addColorStop(.5, base); gr.addColorStop(1, shade);
         c.save(); c.beginPath(); c.moveTo(ax, ay - t); c.lineTo(bx, by - t); c.lineTo(bx, by + t); c.lineTo(ax, ay + t); c.closePath(); c.clip();
-        if (ay !== by){ c.translate(0, 0); }
-        c.fillStyle = gr; c.fillRect(Math.min(ax, bx), Math.min(ay, by) - t - 2, Math.abs(bx - ax), Math.abs(by - ay) + 2 * t + 4);
+        c.fillStyle = gr; c.fillRect(Math.min(ax, bx) - 2, Math.min(ay, by) - t - 2, Math.abs(bx - ax) + 4, Math.abs(by - ay) + 2 * t + 4);
         c.restore();
       }
     });
+    if (grain){
+      var rnd = rng(7);
+      for (var n = 0; n < W * H * grain; n++){
+        c.fillStyle = rnd() < .5 ? 'rgba(255,255,255,.07)' : 'rgba(0,0,0,.12)';
+        c.fillRect(rnd() * W, rnd() * H, 1.2, 1.2);
+      }
+    }
     c.restore();
   }
 
@@ -562,39 +591,79 @@ function sms(body){ return 'sms:' + PHONE + '?&body=' + encodeURIComponent(body)
       gr.addColorStop(1, 'rgba(160,175,188,' + (0.12 * a) + ')');
       c.fillStyle = gr; c.fillRect(0, y, W, course);
     }
-    if (g0wide){
+    if (wide){
+      /* clear zone: siding fades out before it reaches the copy */
       var fz = c.createLinearGradient(0, 0, g.x0 - g.post * 2, 0);
       fz.addColorStop(0, '#d3dce3'); fz.addColorStop(.62, '#d3dce3'); fz.addColorStop(1, 'rgba(211,220,227,0)');
       c.fillStyle = fz; c.fillRect(0, 0, g.x0, g.groundY - 6);
     }
-    /* foundation band and ground */
+    /* foundation band and lawn */
     c.fillStyle = '#a9b3b8'; c.fillRect(0, g.groundY - 6, W, 6);
     var gg = c.createLinearGradient(0, g.groundY, 0, H);
     gg.addColorStop(0, '#8f9a8a'); gg.addColorStop(1, '#6f7b69');
     c.fillStyle = gg; c.fillRect(0, g.groundY, W, H - g.groundY);
-    /* stone steps: treads and risers under the slope, plus the landing block */
-    var n = g.steps, run = (g.x1 - g.x0) / n, riseStep = (g.groundY - g.topY) / n;
-    c.fillStyle = '#9d968b';
-    c.beginPath(); c.moveTo(g.x0 - g.post, g.groundY);
-    for (var i = 0; i < n; i++){
-      var sx = g.x0 - g.post + i * run, ty = g.groundY - (i + 1) * riseStep;
-      c.lineTo(sx, ty); c.lineTo(sx + run, ty);
+
+    /* stone stair: a stepped block wall under cap slabs, like their stone stoops */
+    var n = g.steps, run = (g.x1 - g.x0) / n, rs = g.rise / n, left = g.x0 - g.post * .8, right = g.x2 + g.post;
+    var capH = Math.max(5, rs * .24);
+    function stepped(){
+      c.beginPath(); c.moveTo(left, g.groundY);
+      for (var i = 0; i < n; i++){ var sx = left + i * run, ty = g.groundY - (i + 1) * rs; c.lineTo(sx, ty); c.lineTo(sx + run, ty); }
+      c.lineTo(right, g.topY); c.lineTo(right, g.groundY); c.closePath();
     }
-    c.lineTo(g.x2 + g.post, g.topY); c.lineTo(g.x2 + g.post, g.groundY); c.closePath(); c.fill();
-    for (i = 0; i < n; i++){
-      sx = g.x0 - g.post + i * run; ty = g.groundY - (i + 1) * riseStep;
-      var tg = c.createLinearGradient(0, ty, 0, ty + riseStep);
-      tg.addColorStop(0, '#c9c2b6'); tg.addColorStop(.16, '#b7b0a4'); tg.addColorStop(.2, '#8d867b'); tg.addColorStop(1, '#a29b90');
-      c.fillStyle = tg; c.fillRect(sx, ty, (i === n - 1 ? g.x2 + g.post - sx : run), riseStep);
+    /* soft shadow the stair throws onto the siding */
+    c.save(); c.shadowColor = 'rgba(60,73,85,.32)'; c.shadowBlur = 16 * dpr; c.shadowOffsetX = 8 * dpr; c.shadowOffsetY = -2 * dpr; stepped(); c.fillStyle = '#7b7469'; c.fill(); c.restore();
+    c.save(); stepped(); c.clip();
+    c.fillStyle = '#7b7469'; c.fillRect(left, g.topY, right - left, g.groundY - g.topY);
+    var rnd = rng(11), bh = Math.max(9, rs * .5), row = 0;
+    for (y = g.groundY; y > g.topY - bh; y -= bh, row++){
+      var x = left - (row % 2 ? bh * .9 : 0);
+      while (x < right){
+        var bw = bh * (1.3 + rnd() * 1.4), tone = 150 + Math.round(rnd() * 26);
+        var sg = c.createLinearGradient(0, y - bh, 0, y);
+        sg.addColorStop(0, 'rgb(' + (tone + 8) + ',' + (tone + 2) + ',' + (tone - 8) + ')');
+        sg.addColorStop(1, 'rgb(' + (tone - 12) + ',' + (tone - 18) + ',' + (tone - 28) + ')');
+        c.fillStyle = sg; c.fillRect(x + 1, y - bh + 1, bw - 2, bh - 2);
+        x += bw;
+      }
     }
-    var lg = c.createLinearGradient(0, g.topY, 0, g.groundY);
-    lg.addColorStop(0, '#c9c2b6'); lg.addColorStop(.06, '#a39c91'); lg.addColorStop(1, '#8b8479');
-    c.fillStyle = lg; c.fillRect(g.x1 + run * .0, g.topY, g.x2 + g.post - g.x1, g.groundY - g.topY);
-    /* soft contact shadow of the railing on the steps */
-    c.save(); c.globalAlpha = .18; c.filter = 'blur(6px)'; c.translate(6, 10); railPath(c, g); c.fillStyle = '#26303a'; c.fill(); c.restore();
+    c.restore();
+    /* cap slabs with a small overhang, and the soft shadow they cast */
+    for (var i = 0; i < n + 1; i++){
+      var sx = i < n ? left + i * run - 3 : g.x1 - 3, ex = i < n - 1 ? sx + run + 3 : right + 3;
+      if (i === n - 1) ex = g.x1 + 1;
+      if (i === n) ex = right + 3;
+      var ty = i < n ? g.groundY - (i + 1) * rs : g.topY;
+      if (i === n - 1) continue;   /* the top step is the landing cap */
+      var sh = c.createLinearGradient(0, ty + capH, 0, ty + capH + 7);
+      sh.addColorStop(0, 'rgba(40,36,30,.35)'); sh.addColorStop(1, 'rgba(40,36,30,0)');
+      c.fillStyle = sh; c.fillRect(sx + 3, ty + capH, ex - sx - 3, 7);
+      var cg = c.createLinearGradient(0, ty, 0, ty + capH);
+      cg.addColorStop(0, '#d2cbbf'); cg.addColorStop(1, '#a9a196');
+      c.fillStyle = cg; c.fillRect(sx, ty, ex - sx, capH);
+    }
+    /* soft contact shadow of the railing on the stone */
+    c.save(); c.globalAlpha = .2; c.shadowColor = '#26303a'; c.shadowBlur = 12 * dpr; c.shadowOffsetX = (6 + 4000) * dpr; c.shadowOffsetY = 10 * dpr; c.translate(-4000, 0); railPath(c, g); c.fillStyle = '#26303a'; c.fill(); c.restore();
   }
 
-  var G = null, g0wide = false;
+  /* a powder-coat gun: body, barrel and nozzle, drawn aiming along +x */
+  function drawGun(c, x, y, ang, a){
+    if (a <= .01) return;
+    c.save(); c.globalAlpha = a; c.translate(x, y); c.rotate(ang);
+    var s = phone ? .8 : 1; c.scale(s, s);
+    c.strokeStyle = '#232a31'; c.lineWidth = 5; c.lineCap = 'round';
+    c.beginPath(); c.moveTo(-18, 36); c.quadraticCurveTo(-30, 80, -80, 96); c.stroke();
+    var gr = c.createLinearGradient(0, -6, 0, 6);
+    gr.addColorStop(0, '#6c757e'); gr.addColorStop(.45, '#4a535c'); gr.addColorStop(1, '#2c333a');
+    c.fillStyle = gr;
+    c.beginPath(); c.roundRect(-26, -9, 26, 18, 4); c.fill();
+    c.beginPath(); c.roundRect(-2, -5, 46, 10, 3); c.fill();
+    c.fillStyle = '#8b939b'; c.beginPath(); c.moveTo(44, -4); c.lineTo(56, -2); c.lineTo(56, 2); c.lineTo(44, 4); c.closePath(); c.fill();
+    c.fillStyle = '#2a3138';
+    c.beginPath(); c.moveTo(-22, 6); c.lineTo(-10, 6); c.lineTo(-13, 38); c.lineTo(-25, 38); c.closePath(); c.fill();
+    c.restore();
+  }
+
   function build(){
     var r = scene.getBoundingClientRect();
     var nw = Math.round(r.width), nh = Math.round(r.height);
@@ -602,29 +671,28 @@ function sms(body){ return 'sms:' + PHONE + '?&body=' + encodeURIComponent(body)
     W = nw; H = nh; dpr = Math.min(window.devicePixelRatio || 1, DPR_CAP);
     cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
     G = layout();
-    bg = mk(cv.width, cv.height); bare = mk(cv.width, cv.height); coat = mk(cv.width, cv.height);
+    bg = mk(cv.width, cv.height); powder = mk(cv.width, cv.height); cured = mk(cv.width, cv.height);
+    var bare = mk(cv.width, cv.height);
     mask = mk(cv.width, cv.height); work = mk(cv.width, cv.height);
     mctx = mask.getContext('2d'); wctx = work.getContext('2d');
     var b1 = bg.getContext('2d'); b1.scale(dpr, dpr); paintBackground(b1, G);
-    var b2 = bare.getContext('2d'); b2.scale(dpr, dpr); paintMetal(b2, G, '#a7aeb4', '#d7dce0', '#7f878e');
-    var b3 = coat.getContext('2d'); b3.scale(dpr, dpr); paintMetal(b3, G, '#17191c', '#454b53', '#0b0c0e');
+    var b2 = bare.getContext('2d'); b2.scale(dpr, dpr); paintMetal(b2, G, '#a7aeb4', '#d7dce0', '#7f878e', 0);
+    b1.setTransform(1, 0, 0, 1, 0, 0); b1.drawImage(bare, 0, 0);       /* bare metal is baked into the background */
+    var b3 = powder.getContext('2d'); b3.scale(dpr, dpr); paintMetal(b3, G, '#383b40', '#4a4e54', '#26282c', .35);
+    var b4 = cured.getContext('2d'); b4.scale(dpr, dpr); paintMetal(b4, G, '#17191c', '#4a5059', '#0b0c0e', 0);
     mctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    /* hit map at 1/HS resolution, plus coverage samples */
+    /* hit map at 1/HS resolution; coverage is counted on the same grid */
     hitW = Math.ceil(W / HS); hitH = Math.ceil(H / HS);
-    var hc = mk(hitW, hitH), hx = hc.getContext('2d');
+    var hc = mk(hitW, hitH), hx = hc.getContext('2d', { willReadFrequently: true });
     hx.scale(1 / HS, 1 / HS); railPath(hx, G); hx.fillStyle = '#000'; hx.fill();
-    var d = hx.getImageData(0, 0, hitW, hitH).data; hit = new Uint8Array(hitW * hitH);
-    samples = [];
-    for (var i = 0; i < hit.length; i++){ if (d[i * 4 + 3] > 128){ hit[i] = 1; if (i % 7 === 0) samples.push(i); } }
-    coverage = 0; parts = []; seedMotes();
+    var d = hx.getImageData(0, 0, hitW, hitH).data;
+    hit = new Uint8Array(hitW * hitH); covered = new Uint8Array(hitW * hitH); hitCount = 0; covCount = 0;
+    for (var i = 0; i < hit.length; i++){ if (d[i * 4 + 3] > 128){ hit[i] = 1; hitCount++; } }
+    coverage = 0; parts = []; cure.start = 0; cure.t = 0; cure.filled = false; gun.placed = false; auto.spot = null; auto.sx = auto.sy = null;
+    /* desktop: the hint sits just left of the railing's foot, clear of every bar */
+    if (wide){ hint.style.left = 'auto'; hint.style.right = Math.round(W - G.x0 + 22) + 'px'; hint.style.top = Math.round(G.groundY - G.railH * .55) + 'px'; }
+    else { hint.style.left = ''; hint.style.right = ''; hint.style.top = ''; }
     return true;
-  }
-
-  function seedMotes(){
-    motes = [];
-    var n = phone ? Math.round(MOTES * .6) : MOTES;
-    var mx0 = g0wide ? G.x0 - 60 : 0;
-    for (var i = 0; i < n; i++) motes.push({ x: mx0 + Math.random() * (W - mx0), y: Math.random() * H * .8, ox: 0, oy: 0, vx: 0, vy: 0, ph: Math.random() * 6.28, sp: .3 + Math.random() * .7, r: .8 + Math.random() * 1.6 });
   }
 
   function onMetal(x, y){
@@ -633,10 +701,24 @@ function sms(body){ return 'sms:' + PHONE + '?&body=' + encodeURIComponent(body)
     return hit[hy * hitW + hx] === 1;
   }
 
-  function spray(x, y, vx, vy, n){
+  function deposit(x, y, rad){
+    mctx.beginPath(); mctx.arc(x, y, rad, 0, 6.283); mctx.fill();
+    var cr = Math.ceil(rad / HS), cx = (x / HS) | 0, cy = (y / HS) | 0, r2 = (rad / HS) * (rad / HS);
+    for (var j = -cr; j <= cr; j++) for (var i = -cr; i <= cr; i++){
+      if (i * i + j * j > r2) continue;
+      var gx = cx + i, gy = cy + j;
+      if (gx < 0 || gy < 0 || gx >= hitW || gy >= hitH) continue;
+      var k = gy * hitW + gx;
+      if (hit[k] && !covered[k]){ covered[k] = 1; covCount++; }
+    }
+  }
+
+  /* grains leave the nozzle at (x, y) heading along ang, with a spread */
+  function spray(x, y, ang, spread, speed, vx, vy, n){
     for (var i = 0; i < n && parts.length < MAX_PARTICLES; i++){
-      var a = Math.random() * 6.283, s = .6 + Math.random() * 2.8;
-      parts.push({ x: x + (Math.random() - .5) * 10, y: y + (Math.random() - .5) * 10, vx: Math.cos(a) * s + vx * .35, vy: Math.sin(a) * s + vy * .35, life: 70 + Math.random() * 60, r: .7 + Math.random() * 1.3 });
+      var a = ang + (Math.random() - .5) * spread, s = speed * (.5 + Math.random() * .8), o = Math.random() < OVERSPRAY;
+      if (o) s *= .35;
+      parts.push({ x: x + (Math.random() - .5) * 6, y: y + (Math.random() - .5) * 6, vx: Math.cos(a) * s + vx * .35, vy: Math.sin(a) * s + vy * .35, life: o ? 160 + Math.random() * 120 : 70 + Math.random() * 60, r: .7 + Math.random() * 1.3, o: o });
     }
   }
 
@@ -658,17 +740,12 @@ function sms(body){ return 'sms:' + PHONE + '?&body=' + encodeURIComponent(body)
     }
   }
 
-  function measure(){
-    if (!samples.length) return;
-    var d = mctx.getImageData(0, 0, mask.width, mask.height).data, on = 0, step = Math.max(1, Math.floor(samples.length / 600));
-    var tot = 0;
-    for (var i = 0; i < samples.length; i += step){
-      var s = samples[i], hx = s % hitW, hy = (s / hitW) | 0;
-      var px = Math.min(mask.width - 1, Math.round((hx + .5) * HS * dpr)), py = Math.min(mask.height - 1, Math.round((hy + .5) * HS * dpr));
-      if (d[(py * mask.width + px) * 4 + 3] > 140) on++;
-      tot++;
+  function bareSpot(){
+    for (var n = 0; n < 400; n++){
+      var k = (Math.random() * hit.length) | 0;
+      if (hit[k] && !covered[k]) return [(k % hitW + .5) * HS, ((k / hitW) | 0) * HS + HS / 2];
     }
-    coverage = on / tot;
+    return null;
   }
 
   var frame = 0, lastT = 0;
@@ -678,101 +755,115 @@ function sms(body){ return 'sms:' + PHONE + '?&body=' + encodeURIComponent(body)
     var r = scene.getBoundingClientRect();
     /* pointer in scene coordinates, read every frame because the page can scroll under the finger */
     var px = ptr.cx - r.left, py = ptr.cy - r.top;
-    var userOn = ptr.active && now - ptr.last < 140 && !(g0wide && px < G.x0 - 140);
-    if (now - ptr.last > AUTO_RESUME_MS) auto.on = coverage < 0.985;
-    var emitX, emitY, evx = 0, evy = 0, rate = SPRAY_PER_FRAME * (phone ? .6 : 1);
-    if (userOn){
-      emitX = px; emitY = py; evx = ptr.vx; evy = ptr.vy;
-      ptr.vx *= .7; ptr.vy *= .7;
-      spray(emitX, emitY, evx, evy, rate * dt);
-    } else if (auto.on && now > 900){
+    var userOn = ptr.active && now - ptr.last < 140 && !(wide && px < G.x0 - 140);
+    var done = coverage >= DONE_AT;
+    if (now - ptr.last > AUTO_RESUME_MS) auto.on = !done;
+    var rate = SPRAY_PER_FRAME * (phone ? .6 : 1), tx = null, ty = null, gunShow = false;
+    if (userOn){ tx = px; ty = py; }
+    else if (auto.on && now > 900){
       auto.t += AUTO_SPEED * dt * 16.67;
-      var u = (Math.sin(auto.t * 1.0) * .5 + .5), v = (Math.sin(auto.t * 2.3 + 1.1) * .5 + .5);
-      emitX = G.x0 + u * (G.x2 - G.x0);
-      var sy = G.stairY(emitX);
-      emitY = sy - G.railH * (.15 + v * .85);
-      spray(emitX, emitY, Math.cos(auto.t * 1.0) * 2, 0, rate * .7 * dt);
+      var u = Math.sin(auto.t) * .5 + .5, v = Math.sin(auto.t * 2.3 + 1.1) * .5 + .5;
+      tx = G.x0 + u * (G.x2 - G.x0); ty = G.stairY(tx) - G.railH * (.15 + v * .85);
+      if (coverage > .55){
+        /* finishing pass: hunt down bare spots like a painter touching up */
+        if (!auto.spot || frame % 40 === 0) auto.spot = bareSpot() || auto.spot;
+        if (auto.spot){ auto.sx = auto.sx == null ? auto.spot[0] : auto.sx + (auto.spot[0] - auto.sx) * .08; auto.sy = auto.sy == null ? auto.spot[1] : auto.sy + (auto.spot[1] - auto.sy) * .08; tx = auto.sx; ty = auto.sy; }
+      }
     }
+    if (tx !== null){
+      /* the gun stands off below-left of the spot it sprays, aimed at it */
+      var off = phone ? 54 : 70, gx = tx - off * .8, gy = ty + off * .6;
+      if (!gun.placed){ gun.x = gx; gun.y = gy; gun.placed = true; }
+      var k = userOn ? .5 : .12;
+      gun.x += (gx - gun.x) * k; gun.y += (gy - gun.y) * k;
+      gun.ang = Math.atan2(ty - gun.y, tx - gun.x);
+      gunShow = !(userOn && ptr.touch);
+      var nzx = gun.x + Math.cos(gun.ang) * 52 * (phone ? .8 : 1), nzy = gun.y + Math.sin(gun.ang) * 52 * (phone ? .8 : 1);
+      if (userOn && ptr.touch) spray(tx, ty, 0, 6.283, 2.2, ptr.vx, ptr.vy, rate * dt);
+      else spray(nzx, nzy, gun.ang, .55, 4.6, userOn ? ptr.vx : 0, userOn ? ptr.vy : 0, rate * (userOn ? 1 : .7) * dt);
+      if (userOn){ ptr.vx *= .7; ptr.vy *= .7; }
+    }
+    gun.a += ((gunShow ? 1 : 0) - gun.a) * .12;
 
-    /* particles */
+    /* particles: swap-and-pop removal */
     mctx.fillStyle = '#000';
     for (var i = parts.length - 1; i >= 0; i--){
       var p = parts[i];
-      attract(p);
-      p.vx *= Math.pow(.955, dt); p.vy *= Math.pow(.955, dt); p.vy += .015 * dt;
+      if (!p.o) attract(p);
+      p.vx *= Math.pow(.955, dt); p.vy *= Math.pow(.955, dt); p.vy += (p.o ? -.004 : .015) * dt;
       p.x += p.vx * dt; p.y += p.vy * dt; p.life -= dt;
-      if (onMetal(p.x, p.y)){
-        mctx.beginPath(); mctx.arc(p.x, p.y, DEPOSIT_R * (.7 + p.r * .3), 0, 6.283); mctx.fill();
-        parts.splice(i, 1); continue;
-      }
-      if (p.life <= 0 || p.x < -20 || p.x > W + 20 || p.y < -20 || p.y > H + 20) parts.splice(i, 1);
+      var dead = p.life <= 0 || p.x < -20 || p.x > W + 20 || p.y < -20 || p.y > H + 20;
+      if (!dead && !p.o && onMetal(p.x, p.y)){ deposit(p.x, p.y, DEPOSIT_R * (.7 + p.r * .3)); dead = true; }
+      if (dead){ parts[i] = parts[parts.length - 1]; parts.pop(); }
     }
-    if (frame % 20 === 0) measure();
+    if (frame % 10 === 0){ coverage = hitCount ? covCount / hitCount : 0; scene.dataset.coverage = coverage.toFixed(3); }
 
-    /* compose: siding and steps, bare metal, then coat through the mask */
+    /* full coat: cure the matte powder to semi-gloss */
+    if (coverage >= DONE_AT && !cure.start){ cure.start = now + 500; }
+    if (cure.start && now > cure.start && !cure.filled){ cure.filled = true; mctx.fillStyle = '#000'; mctx.fillRect(0, 0, W, H); }   /* the last specks are caught as it cures */
+    if (cure.start && now > cure.start){
+      cure.t = Math.min(1, (now - cure.start) / CURE_MS);
+      if (cure.t >= 1 && !hint.dataset.done){ hint.dataset.done = 1; hint.textContent = 'Semi-gloss black, like on our jobs'; hint.classList.remove('gone'); }
+    }
+
+    /* compose: siding, steps and bare metal; then the coat through the mask */
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.drawImage(bg, 0, 0);
-    ctx.drawImage(bare, 0, 0);
-    wctx.globalCompositeOperation = 'source-over'; wctx.clearRect(0, 0, work.width, work.height);
-    wctx.drawImage(coat, 0, 0);
+    wctx.globalCompositeOperation = 'source-over'; wctx.globalAlpha = 1; wctx.clearRect(0, 0, work.width, work.height);
+    if (cure.t < 1) wctx.drawImage(powder, 0, 0);
+    if (cure.t > 0){ wctx.globalAlpha = cure.t * cure.t * (3 - 2 * cure.t); wctx.drawImage(cured, 0, 0); wctx.globalAlpha = 1; }
     wctx.globalCompositeOperation = 'destination-in'; wctx.drawImage(mask, 0, 0);
     ctx.drawImage(work, 0, 0);
 
-    /* powder in the air */
+    /* powder in the air, then the gun in front of it */
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    var t = now / 1000;
-    ctx.fillStyle = 'rgba(38,44,52,.42)';
-    for (i = 0; i < parts.length; i++){ p = parts[i]; ctx.globalAlpha = Math.min(1, p.life / 40); ctx.fillRect(p.x - p.r / 2, p.y - p.r / 2, p.r, p.r); }
+    ctx.fillStyle = 'rgb(38,44,52)';
+    for (i = 0; i < parts.length; i++){ p = parts[i]; ctx.globalAlpha = Math.min(.5, p.life / (p.o ? 300 : 80)); ctx.fillRect(p.x - p.r / 2, p.y - p.r / 2, p.r, p.r); }
     ctx.globalAlpha = 1;
-    for (i = 0; i < motes.length; i++){
-      var m = motes[i];
-      m.x += (Math.sin(t * .6 * m.sp + m.ph) * .25 + Math.sin(t * 1.7 + m.ph * 2) * .12 + .05) * dt;
-      m.y += (Math.cos(t * .5 * m.sp + m.ph) * .18 - .04) * dt;
-      if (m.x > W + 5) m.x = (g0wide ? G.x0 - 60 : -5); if (m.y < -5) m.y = H * .8;
-      var dx = m.x + m.ox - px, dy = m.y + m.oy - py, dd = dx * dx + dy * dy;
-      if (ptr.seen && dd < 6400 && dd > 1){ var f = (1 - Math.sqrt(dd) / 80) * 1.4; m.vx += dx / Math.sqrt(dd) * f + ptr.vx * .03; m.vy += dy / Math.sqrt(dd) * f + ptr.vy * .03; }
-      m.vx += -m.ox * .02; m.vy += -m.oy * .02; m.vx *= .9; m.vy *= .9;
-      m.ox += m.vx * dt; m.oy += m.vy * dt;
-      ctx.fillStyle = 'rgba(60,68,78,' + (.18 + .14 * Math.sin(t * 2 + m.ph)) + ')';
-      ctx.beginPath(); ctx.arc(m.x + m.ox, m.y + m.oy, m.r, 0, 6.283); ctx.fill();
-    }
-    if (running) rafId = requestAnimationFrame(tick);
+    drawGun(ctx, gun.x, gun.y, gun.ang, gun.a);
+
+    /* keep running while anything still moves */
+    var idle = done && cure.t >= 1 && !parts.length && gun.a < .01 && !userOn;
+    if (running && !idle) rafId = requestAnimationFrame(tick);
+    else running = false;
   }
 
   function start(){ if (!running && visible){ running = true; lastT = 0; rafId = requestAnimationFrame(tick); } }
   function stop(){ running = false; if (rafId) cancelAnimationFrame(rafId); rafId = 0; }
 
-  function point(e, x, y){
+  function point(x, y, touch){
+    if (REDUCED) return;
+    if (wide && G && x - scene.getBoundingClientRect().left < G.x0 - 140) return;   /* over the copy: leave the autopilot alone */
     var now = performance.now();
     if (ptr.seen && now - ptr.last < 100){ ptr.vx = (x - ptr.cx) * .6 + ptr.vx * .4; ptr.vy = (y - ptr.cy) * .6 + ptr.vy * .4; }
-    ptr.cx = x; ptr.cy = y; ptr.last = now; ptr.seen = true; ptr.active = true; auto.on = false;
-    hint.classList.add('gone');
+    ptr.cx = x; ptr.cy = y; ptr.last = now; ptr.seen = true; ptr.active = true; ptr.touch = touch; auto.on = false;
+    if (!hint.dataset.done) hint.classList.add('gone');
+    start();
   }
-  scene.addEventListener('pointerdown', function(e){ e.preventDefault(); point(e, e.clientX, e.clientY); });
-  scene.addEventListener('pointermove', function(e){ if (e.pointerType === 'mouse' || e.buttons || e.pressure > 0) point(e, e.clientX, e.clientY); });
+  scene.addEventListener('pointerdown', function(e){ if (REDUCED) return; e.preventDefault(); point(e.clientX, e.clientY, e.pointerType !== 'mouse'); });
+  scene.addEventListener('pointermove', function(e){ if (e.pointerType === 'mouse' || e.buttons || e.pressure > 0) point(e.clientX, e.clientY, e.pointerType !== 'mouse'); });
   scene.addEventListener('pointerleave', function(){ ptr.active = false; });
-  scene.addEventListener('touchmove', function(e){ var t = e.touches[0]; if (t) point(e, t.clientX, t.clientY); }, { passive: true });
-  scene.addEventListener('touchstart', function(e){ var t = e.touches[0]; if (t) point(e, t.clientX, t.clientY); }, { passive: true });
+  scene.addEventListener('touchmove', function(e){ var t = e.touches[0]; if (t) point(t.clientX, t.clientY, true); }, { passive: true });
+  scene.addEventListener('touchstart', function(e){ var t = e.touches[0]; if (t) point(t.clientX, t.clientY, true); }, { passive: true });
   scene.addEventListener('touchend', function(){ ptr.active = false; }, { passive: true });
 
+  function still(){
+    /* reduced motion: one frame with the left half coated and cured */
+    mctx.fillStyle = '#000'; mctx.fillRect(0, 0, W * .52, H); cure.t = 1; coverage = 1;
+    hint.textContent = ''; running = false; tick(performance.now());
+  }
   function init(){
     build();
     scene.querySelector('.scene-fallback').style.display = 'none';
-    if (REDUCED){
-      /* still frame: the left half already coated */
-      mctx.fillStyle = '#000'; mctx.fillRect(0, 0, W * .52, H);
-      hint.textContent = '';
-      running = false; tick(performance.now()); return;
-    }
+    if (REDUCED){ still(); return; }
     if ('IntersectionObserver' in window){
       new IntersectionObserver(function(es){ visible = es[0].isIntersecting; visible ? start() : stop(); }).observe(scene);
     }
     start();
   }
-  window.addEventListener('resize', function(){ if (build() && REDUCED){ mctx.fillStyle = '#000'; mctx.fillRect(0, 0, W * .52, H); tick(performance.now()); } });
+  window.addEventListener('resize', function(){ if (build()){ if (REDUCED) still(); else start(); } });
   document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : start(); });
   init();
-  window.__coat = function(){ return { coverage: coverage, parts: parts.length, W: W, H: H }; };
 })();
 </script>
 </body>
